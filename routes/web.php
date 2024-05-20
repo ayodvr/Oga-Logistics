@@ -52,10 +52,12 @@ Route::get('/orderallocation', "App\Http\Controllers\admincontroller@orderalloca
 
 //Driver Dashboard Routes
 Route::get('/driverdash', "App\Http\Controllers\drivercontroller@driverdash")->name('driverdash');
+Route::get('/task', "App\Http\Controllers\drivercontroller@task")->name('task');
+Route::get('/statement', "App\Http\Controllers\drivercontroller@statement")->name('statement');
 
 //Partner Dashboard Routes
-Route::get('/partnerdash', "App\Http\Controllers\partnercontroller@partnerdash")->name('partnerdash');
-
+Route::get('/orderhistory', "App\Http\Controllers\partnercontroller@orderhistory")->name('orderhistory');
+Route::get('/trackorder', "App\Http\Controllers\partnercontroller@trackorder")->name('trackorder');
 
 
 require __DIR__.'/auth.php';

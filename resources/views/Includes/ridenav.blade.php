@@ -15,7 +15,7 @@
     </div>
     <div class="menu-items">
         <div class="all-menu-items">
-            <a class="menu-item" href="index.html">
+            <a class="menu-item" href="/dashboard">
                 <div>
                     <span class="menu-item-icon menu-dark">
                         <img src="{{asset('mobstyle/icons/home.svg')}}" alt="Home Icon">
@@ -99,7 +99,7 @@
     </div>
     <div class="menu-items">
         <div class="all-menu-items">
-            <a class="menu-item" href="index.html">
+            <a class="menu-item" href="/dashboard">
                 <div>
                         <span class="menu-item-icon menu-dark">
                         <img src="{{asset('mobstyle/icons/home.svg')}}" alt="Home Icon">
@@ -201,7 +201,7 @@
     </div>
     <div class="menu-items">
         <div class="all-menu-items">
-            <a class="menu-item" href="index.html">
+            <a class="menu-item" href="/dashboard">
                 <div>
                     <span class="menu-item-icon menu-dark">
                         <img src="{{asset('mobstyle/icons/home.svg')}}" alt="Home Icon">
@@ -213,7 +213,7 @@
                     <span class="menu-item-click fas fa-arrow-right"></span>
                 </div>
             </a>
-            <a class="menu-item" href="profile.html">
+            <a class="menu-item" href="/trackorder">
                 <span class="menu-item-icon menu-dark profile">
                     <img src="{{asset('mobstyle/icons/avatar-dark.svg')}}" alt="Avatar Darker Icon">
                 </span>
@@ -223,7 +223,7 @@
                 <span class="menu-item-title profile">Track My Order</span>
                 <span class="menu-item-click fas fa-arrow-right"></span>
             </a>
-            <a class="menu-item" href="payment-method.html">
+            <a class="menu-item" href="/orderhistory">
                 <span class="menu-item-icon far fa-money-bill-alt"></span>
                 <span class="menu-item-title">Order History</span>
                 <span class="menu-item-click fas fa-arrow-right"></span>

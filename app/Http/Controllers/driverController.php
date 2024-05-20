@@ -12,4 +12,19 @@ class driverController extends Controller
             return view('driver.dash');
        
     }
+
+    public function task()
+    {
+        
+            return view('driver.task');
+       
+    }
+
+    public function statement()
+    {
+        
+            return view('driver.statement');
+       
+    }
+
 }

@@ -16,6 +16,9 @@
     <link rel="stylesheet" href="{{asset('mobstyle/css/bootstrap.min.css')}}">
     <!-- FontAwesome -->
     <link rel="stylesheet" href="{{asset('mobstyle/css/fontawesome.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/vendors.css') }}" />
+    <!-- app style -->
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/style.css') }}" />
     <!-- Main Style -->
     <link rel="stylesheet" href="{{asset('mobstyle/css/styles.css')}}">
     <style>

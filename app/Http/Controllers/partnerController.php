@@ -10,4 +10,15 @@ class partnerController extends Controller
     {
             return view('partner.dash');
     }
+
+    public function orderhistory()
+    {
+            return view('partner.orderhistory');
+    }
+
+    public function trackorder()
+    {
+            return view('partner.trackorder');
+    }
+
 }
