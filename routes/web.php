@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\dashController;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\EstimateController;
+use App\Http\Controllers\adminController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -26,6 +27,7 @@ Route::resource('/estimate', 'App\Http\Controllers\EstimateController');
 Route::post('/request-ride', "App\Http\Controllers\CustomerController@requestRide")->name('request.ride');
 Route::get('/fetch-fare-rate', 'App\Http\Controllers\CustomerController@fetch');
 Route::post('/order-placed/{string}', 'App\Http\Controllers\CustomerController@orderPlaced')->name('order.placed');
+Route::post('/allocated/{order}/{id}', 'App\Http\Controllers\adminController@allocatedRide');
 
 //Customer Dashboard Routes
 Route::get('/dashboard', "App\Http\Controllers\dashcontroller@dashboard")->middleware(['auth', 'verified'])->name('dashboard');
@@ -51,12 +53,15 @@ Route::get('/alluser', "App\Http\Controllers\admincontroller@alluser")->name('al
 Route::get('/orderallocation', "App\Http\Controllers\admincontroller@orderallocation")->name('orderallocation');
 
 //Driver Dashboard Routes
-Route::get('/driverdash', "App\Http\Controllers\drivercontroller@driverdash")->name('driverdash');
+Route::get('/driverdash', "App\Http\Controllers\drivercontroller@allocatedRide")->name('allocatedRide');
 Route::get('/task', "App\Http\Controllers\drivercontroller@task")->name('task');
 Route::get('/statement', "App\Http\Controllers\drivercontroller@statement")->name('statement');
+Route::get('/accept_order/{id}', "App\Http\Controllers\drivercontroller@acceptOrder")->name('accept_order');
+Route::get('/picked_up/{id}', "App\Http\Controllers\drivercontroller@pickedUp")->name('picked_up');
+Route::get('/delivered/{id}', "App\Http\Controllers\drivercontroller@delivered")->name('delivered');
 
 //Partner Dashboard Routes
-Route::get('/orderhistory', "App\Http\Controllers\partnercontroller@orderhistory")->name('orderhistory');
+// Route::get('/orderhistory', "App\Http\Controllers\partnercontroller@orderhistory")->name('orderhistory');
 Route::get('/trackorder', "App\Http\Controllers\partnercontroller@trackorder")->name('trackorder');
 
 

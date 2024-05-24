@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Customer;
+use App\Models\User;
+use App\Models\Estimate;
 
 class driverController extends Controller
 {
@@ -15,10 +18,27 @@ class driverController extends Controller
 
     public function task()
     {
-        
-            return view('driver.task');
+        $allocated = Customer::where('driver_id', auth()->user()->id)->get();
+        //dd($allocated);
+        return view('driver.task')->with('allocated', $allocated);
        
     }
+
+    public function acceptOrder($id){
+        Customer::find($id)->update(['accepted'=> 1]);
+        return back();
+    }
+
+    public function pickedUp($id){
+        Customer::find($id)->update(['accepted'=> 2]);
+        return back();
+    }
+
+    public function delivered($id){
+        Customer::find($id)->update(['accepted'=> 3]);
+        return back();
+    }
+
 
     public function statement()
     {

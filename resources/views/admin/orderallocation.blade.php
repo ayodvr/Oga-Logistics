@@ -10,7 +10,7 @@
                                 <!-- begin page title -->
                                 <div class="d-block d-sm-flex flex-nowrap align-items-center">
                                     <div class="page-title mb-2 mb-sm-0">
-                                        <h1>Order Allocation For Drivers</h1>
+                                        <h1>All Orders</h1>
                                     </div>
                                     <div class="ml-auto d-flex align-items-center">
                                         <nav>
@@ -21,7 +21,7 @@
                                                 <li class="breadcrumb-item">
                                                     Home
                                                 </li>
-                                                <li class="breadcrumb-item active text-primary" aria-current="page">Order Allocation</li>
+                                                <li class="breadcrumb-item active text-primary" aria-current="page">All Orders</li>
                                             </ol>
                                         </nav>
                                     </div>
@@ -32,168 +32,105 @@
                         <!-- end row -->
                         <!-- begin row -->
                         <div class="row">
-                          
                           <div class="col-xxl-12 m-b-30">
                               <div class="card card-statistics dating-contant h-100 mb-0">
                                   <div class="card-header">
                                       <h4 class="card-title"></h4>
                                   </div>
-                                  <div class="card-body pt-2 scrollbar scroll_dark" style="height: ">
-                                      <div class="table-responsive">
-                                          <table id="datatable-buttons" class="table table-striped">
-                                              <thead>
-                                                  <tr>
-                                                      <th class="border-top-0">No.</th>
-                                                      <th class="border-top-0">User Name</th>
-                                                      <th class="border-top-0">Subject</th>
-                                                      <th class="border-top-0">Status</th>
-                                                      <th class="border-top-0">Date</th>
-                                                      <th class="border-top-0">Action</th>
-                                                  </tr>
-                                              </thead>
-                                              <tbody class="text-muted">
-                                                  <tr>
-                                                      <td>00001</td>
-                                                      <td>
-                                                          <div class="bg-img">
-                                                              <img class="img-fluid" src="assets/img/avtar/01.jpg" alt="user">
-                                                          </div>
-                                                          <p>Adrian Demiandro</p>
-                                                      </td>
-                                                      <td>Support Lead</td>
-                                                      <td>
-                                                          <label class="badge mb-0 badge-success-inverse">Completed</label>
-                                                      </td>
-                                                      <td>27/3/2018</td>
-                                                      <td>
-                                                          <div class="btn-group" role="group">
-                                                              <button id="btnGroupDrop1" type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                                  Assign Driver
-                                                              </button>
-                                                              <div class="dropdown-menu custom-dropdown p-4" aria-labelledby="btnGroupDrop1">
-                                                                  <a class="dropdown-item" href="javascript:void(0)">Driver 1</a>
-                                                                  <a class="dropdown-item" href="javascript:void(0)">Driver 2</a>
-                                                              </div>
-                                                          </div>
-                                                      </td>
-                                                  </tr>
-                                                  <tr>
-                                                      <td>00002</td>
-                                                      <td>
-                                                          <div class="bg-img">
-                                                              <img class="img-fluid" src="assets/img/avtar/02.jpg" alt="user2">
-                                                          </div>
-                                                          <p>Jenny Smithdro</p>
-                                                      </td>
-                                                      <td>Office Manager</td>
-                                                      <td>
-                                                          <label class="badge mb-0 badge-danger-inverse">Cancelled</label>
-                                                      </td>
-                                                      <td>29/3/2018</td>
-                                                      <td>
-                                                          <a href="javascript:void(0)" class="mr-2"><i class="fa fa-pencil" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit"></i></a>
-                                                          <a href="javascript:void(0)"><i class="fa fa-trash" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete"></i></a>
-                                                      </td>
-                                                  </tr>
-                                                  <tr>
-                                                      <td>00003</td>
-                                                      <td>
-                                                          <div class="bg-img">
-                                                              <img class="img-fluid" src="assets/img/avtar/03.jpg" alt="user3">
-                                                          </div>
-                                                          <p>Brian Joedro</p>
-                                                      </td>
-                                                      <td>Sales Assistant</td>
-                                                      <td>
-                                                          <label class="badge mb-0 badge-warning-inverse">Pending</label>
-                                                      </td>
-                                                      <td>01/04/2018</td>
-                                                      <td>
-                                                          <a href="javascript:void(0)" class="mr-2"><i class="fa fa-pencil" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit"></i></a>
-                                                          <a href="javascript:void(0)"><i class="fa fa-trash" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete"></i></a>
-                                                      </td>
-                                                  </tr>
-                                                  <tr>
-                                                      <td>00004</td>
-                                                      <td>
-                                                          <div class="bg-img">
-                                                              <img class="img-fluid" src="assets/img/avtar/04.jpg" alt="user4">
-                                                          </div>
-                                                          <p>Sandradro Garett</p>
-                                                      </td>
-                                                      <td>Integration Specialist</td>
-                                                      <td>
-                                                          <label class="badge mb-0 badge-success-inverse">Completed</label>
-                                                      </td>
-                                                      <td>10/04/2018</td>
-                                                      <td>
-                                                          <a href="javascript:void(0)" class="mr-2"><i class="fa fa-pencil" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit"></i></a>
-                                                          <a href="javascript:void(0)"><i class="fa fa-trash" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete"></i></a>
-                                                      </td>
-                                                  </tr>
-                                                  <tr>
-                                                      <td>00005</td>
-                                                      <td>
-                                                          <div class="bg-img">
-                                                              <img class="img-fluid" src="assets/img/avtar/05.jpg" alt="user5">
-                                                          </div>
-                                                          <p>Garydro</p>
-                                                      </td>
-                                                      <td>Senior Javascript Developer</td>
-                                                      <td>
-                                                          <label class="badge mb-0 badge-success-inverse">Completed</label>
-                                                      </td>
-                                                      <td>15/04/2018</td>
-                                                      <td>
-                                                          <a href="javascript:void(0)" class="mr-2"><i class="fa fa-pencil" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit"></i></a>
-                                                          <a href="javascript:void(0)"><i class="fa fa-trash" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete"></i></a>
-                                                      </td>
-                                                  </tr>
-                                                  <tr>
-                                                      <td>00006</td>
-                                                      <td>
-                                                          <div class="bg-img">
-                                                              <img class="img-fluid" src="assets/img/avtar/06.jpg" alt="user6">
-                                                          </div>
-                                                          <p>Andrew dro</p>
-                                                      </td>
-                                                      <td>Accountant</td>
-                                                      <td>
-                                                          <label class="badge mb-0 badge-warning-inverse">Pending</label>
-                                                      </td>
-                                                      <td>22/04/2018</td>
-                                                      <td>
-                                                          <a href="javascript:void(0)" class="mr-2"><i class="fa fa-pencil" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit"></i></a>
-                                                          <a href="javascript:void(0)"><i class="fa fa-trash" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete"></i></a>
-                                                      </td>
-                                                  </tr>
-                                                  <tr>
-                                                      <td>00007</td>
-                                                      <td>
-                                                          <div class="bg-img">
-                                                              <img class="img-fluid" src="assets/img/avtar/01.jpg" alt="user7">
-                                                          </div>
-                                                          <p>Stonedro</p>
-                                                      </td>
-                                                      <td>System Architect</td>
-                                                      <td>
-                                                          <label class="badge mb-0 badge-danger-inverse">Cancelled</label>
-                                                      </td>
-                                                      <td>27/04/2018</td>
-                                                      <td>
-                                                          <a href="javascript:void(0)" class="mr-2"><i class="fa fa-pencil" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit"></i></a>
-                                                          <a href="javascript:void(0)"><i class="fa fa-trash" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete"></i></a>
-                                                      </td>
-                                                  </tr>
-                                              </tbody>
-                                          </table>
-                                      </div>
+                                  <div class="card-body">
+                                    <div class="datatable-wrapper table-responsive">
+                                      <table
+                                        id="datatable"
+                                        class="display compact table table-striped table-bordered"
+                                      >
+                                        <thead>
+                                          <tr>
+                                              <th >Order Id</th>
+                                              <th >From</th>
+                                              <th >To</th>
+                                              <th >Trip Cost</th>
+                                              <th >Date</th>
+                                              <th >Driver</th>
+                                              <th >Action</th>
+                                              <th >Status</th>
+                                          </tr>
+                                        </thead>
+                                        <tbody>
+                                          @if($estimate)
+                                          @forEach($estimate as $estimates)
+                                            <tr>
+                                                <td>{{$estimates->order_id}}</td>
+                                                <td class="mt-2">{{$estimates->origin}}</td> 
+                                                <td>{{$estimates->destination}}</td>
+                                                <td>{{$estimates->trip_cost}}</td>
+                                                <td>{{$estimates->created_at->diffForHumans()}}</td>
+                                                @if($estimates->driver_id != 0)
+                                                <td>{{$estimates->assigned}}</td>
+                                                @else
+                                                <td>
+                                                  <form method="POST" action="/allocated/{{$estimates->order_id}}/{{$estimates->id}}">
+                                                    @csrf
+                                                    <select class="js-basic-single form-control" name="state" required>
+                                                      <optgroup>
+                                                        <option>Select Rider</option>
+                                                        @forEach($driver as $drivers)
+                                                          <option value="{{$drivers->id}}">{{$drivers->name." ".$drivers->last_name}}</option>
+                                                          @endforEach
+                                                      </optgroup>
+                                                  </select>
+                
+                                                </td>
+                                                @endif
+                                                @if($estimates->assigned)
+                                                <td>
+                                                  <div class="py-2 border-bottom">
+                                                    <button class="btn btn-xs btn-dark" type="button" disabled>
+                                                      Assigned
+                                                    </button>
+                                                  </div>
+                                                </td>
+                                                @else
+                                                <td>
+                                                  <div class="py-2 border-bottom">
+                                                    <button class="btn btn-xs btn-success" type="submit">
+                                                      Assign Driver
+                                                    </button>
+                                                  </div>
+                                                </td>
+                                                @endif
+                                              </form>
+                                              <td>
+                                                @if($estimates->accepted == 1)
+                                                <button class="btn btn-xs btn-info" disabled>Accepted</button>
+                                                @elseif($estimates->accepted == 2)
+                                                <button class="btn btn-xs btn-info" disabled>Picked Up</button>
+                                                @elseif($estimates->accepted == 3)
+                                                <button class="btn btn-xs btn-success" disabled>Delivered</button>
+                                                @else
+                                                <button class="btn btn-xs btn-danger" disabled>Pending</button>
+                                                @endif
+                                              </td>
+                                            </tr>
+                                            @endforEach
+                                            
+                                            @endif
+                                      </tbody>
+                                        <tfoot>
+                                          <tr>
+                                              <th>Order Id</th>
+                                              <th>Origin</th>
+                                              <th>Destination</th>
+                                              <th>Trip Cost</th>
+                                              <th>Date</th>
+                                              <th>Driver</th>
+                                              <th>Action</th>
+                                          </tr>
+                                        </tfoot>
+                                      </table>
+                                    </div>
                                   </div>
                               </div>
                           </div>
-                      </div>
+                        </div>
                     </div>
-                    <!-- end container-fluid -->
-
-
 @endsection

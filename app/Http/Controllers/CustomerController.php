@@ -42,39 +42,49 @@ class CustomerController extends Controller
     }
 
 
-    public function orderPlaced(Request $request, $string, $id=null)
+    public function orderPlaced(Request $request, $string)
     {
         $randomNumber = random_int(1000000000, 9999999999);
         $orderNumber = random_int(1000000, 9999999);
 
-        $data = [
-            'origin'          => $request->origin,
-            'destination'     => $request->destination,
-            'trip_distance'   => $request->trip_distance,
-            'trip_time'       => $request->trip_time,
-            'trip_cost'       => $request->trip_cost,
-            'user_id'         => $request->user_id,
-            'hashed'          => $string,
-            'tracking'        => "OG"."-".$randomNumber,
-            'order_id'         => "OD"."-".$orderNumber
-        ];
+        // $data = [
+        //     'origin'          => $request->origin,
+        //     'destination'     => $request->destination,
+        //     'trip_distance'   => $request->trip_distance,
+        //     'trip_time'       => $request->trip_time,
+        //     'trip_cost'       => $request->trip_cost,
+        //     'user_id'         => $request->user_id,
+        //     'hashed'          => $string,
+        //     'tracking'        => "OG"."-".$randomNumber,
+        //     'order_id'        => "OD"."-".$orderNumber,
+        //     'driver_id'       => 0
+        // ];
 
-        $trip = Customer::create($data);
-        $id = $trip->user_id;
-        if($trip->hashed == $string){
-            $summary = Customer::findorfail($id)->latest()->first();
+        $order                 = new Customer;
+        $order->origin         = $request->origin;
+        $order->destination    = $request->destination;
+        $order->trip_distance  = $request->trip_distance;
+        $order->trip_time      = $request->trip_time;
+        $order->trip_cost      = $request->trip_cost;
+        $order->user_id        = $request->user_id;
+        $order->hashed         = $string;
+        $order->tracking       = "OG"."-".$randomNumber;
+        $order->order_id       = "OD"."-".$orderNumber;
+        $order->driver_id      = 0;
+        $order->assigned       = 0;
+        $order->accepted       = 0;
+        $order->picked_up      = 0;
+        $order->delivered      = 0;
+
+        $order->save();
+
+        $summary = Customer::findorfail($order->id)->latest()->first();
+
+        if($summary){
             return view('customer.orderPlaced')->with('summary', $summary);
         }
     }
 
-    // public function orderPlaced(Request $request, $string, $id=null)
-    // {
-    //     $id = $trip->user_id;
-    //     if($trip->hashed == $string){
-    //         $summary = Customer::findorfail($id)->latest()->first();
-    //         return view('customer.orderPlaced')->with('summary', $summary);
-    //     }
-    // }
     /**
      * Update the specified resource in storage.
      */

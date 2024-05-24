@@ -1,9 +1,6 @@
 @extends('mobilelayouts.layouts')
 
 @section('content')
-
-
-
 <div class="col-xs-12 col-sm-12">
     <!--Page Title & Icons Start-->
     <div class="header-icons-container text-center">

@@ -48,4 +48,10 @@ class User extends Authenticatable implements LaratrustUser
             'password' => 'hashed',
         ];
     }
+
+    // public function customers(): BelongsTo
+    // {
+    //     return $this->belongsTo(Customer::class);
+    // }
+
 }

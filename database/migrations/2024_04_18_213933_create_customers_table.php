@@ -18,10 +18,15 @@ return new class extends Migration
             $table->string('trip_distance');
             $table->string('trip_time');
             $table->string('trip_cost');
-            $table->string('user_id');
+            $table->integer('user_id');
             $table->string('hashed');
             $table->string('tracking');
             $table->string('order_id');
+            $table->integer('driver_id');
+            $table->string('assigned');
+            $table->integer('accepted');
+            $table->integer('picked_up');
+            $table->integer('delivered');
             $table->timestamps();
         });
     }

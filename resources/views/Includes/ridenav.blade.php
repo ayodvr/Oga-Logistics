@@ -27,7 +27,7 @@
                     <span class="menu-item-click fas fa-arrow-right"></span>
                 </div>
             </a>
-            <a class="menu-item" href="/trackorder">
+            {{-- <a class="menu-item" href="/trackorder">
                 <span class="menu-item-icon menu-dark profile">
                     <img src="{{asset('mobstyle/icons/avatar-dark.svg')}}" alt="Avatar Darker Icon">
                 </span>
@@ -36,9 +36,9 @@
                 </span>
                 <span class="menu-item-title profile">Track My Order</span>
                 <span class="menu-item-click fas fa-arrow-right"></span>
-            </a>
+            </a> --}}
             <a class="menu-item" href="/orderhistory">
-                <span class="menu-item-icon far fa-money-bill-alt"></span>
+                <span class="menu-item-icon fa fa-history" style="color: black"></span>
                 <span class="menu-item-title">Order History</span>
                 <span class="menu-item-click fas fa-arrow-right"></span>
             </a>
