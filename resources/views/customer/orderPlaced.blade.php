@@ -47,7 +47,7 @@
                 <div class="sign-up-form-container text-center">
                     <form class="width-100">
                         <div class="form-submit-button">
-                            <a href="/trackorder" class="btn btn-primary font-weight-light text-uppercase">Track Progress</a>
+                            <a href="/trackorder/{{$summary->id}}" class="btn btn-primary font-weight-light text-uppercase">Track Progress</a>
                         </div>
                     </form>
                 </div>

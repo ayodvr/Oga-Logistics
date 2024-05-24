@@ -70,11 +70,11 @@ class CustomerController extends Controller
         $order->hashed         = $string;
         $order->tracking       = "OG"."-".$randomNumber;
         $order->order_id       = "OD"."-".$orderNumber;
-        $order->driver_id      = 0;
-        $order->assigned       = 0;
-        $order->accepted       = 0;
-        $order->picked_up      = 0;
-        $order->delivered      = 0;
+        // $order->driver_id      = nullable;
+        // $order->assigned       = nullable;
+        // $order->accepted       = nullable;
+        // $order->picked_up      = nullable;
+        // $order->delivered      = nullable;
 
         $order->save();
 

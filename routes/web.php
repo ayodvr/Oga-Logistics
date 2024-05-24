@@ -34,7 +34,7 @@ Route::get('/dashboard', "App\Http\Controllers\dashcontroller@dashboard")->middl
 Route::get('/profile', "App\Http\Controllers\dashcontroller@profile")->middleware(['auth', 'verified'])->name('profile');
 Route::get('/history', "App\Http\Controllers\dashcontroller@history")->middleware(['auth', 'verified'])->name('history');
 Route::get('/address', "App\Http\Controllers\dashcontroller@address")->middleware(['auth', 'verified'])->name('address');
-Route::get('/trackorder', "App\Http\Controllers\dashcontroller@trackorder")->name('trackorder');
+Route::get('/trackorder/{id}', "App\Http\Controllers\dashcontroller@trackorder")->name('trackorder');
 Route::get('/orderhistory', "App\Http\Controllers\dashcontroller@orderhistory")->name('orderhistory');
 
 
@@ -62,7 +62,7 @@ Route::get('/delivered/{id}', "App\Http\Controllers\drivercontroller@delivered")
 
 //Partner Dashboard Routes
 // Route::get('/orderhistory', "App\Http\Controllers\partnercontroller@orderhistory")->name('orderhistory');
-Route::get('/trackorder', "App\Http\Controllers\partnercontroller@trackorder")->name('trackorder');
+// Route::get('/trackorder', "App\Http\Controllers\partnercontroller@trackorder")->name('trackorder');
 
 
 require __DIR__.'/auth.php';

@@ -22,11 +22,11 @@ return new class extends Migration
             $table->string('hashed');
             $table->string('tracking');
             $table->string('order_id');
-            $table->integer('driver_id');
-            $table->string('assigned');
-            $table->integer('accepted');
-            $table->integer('picked_up');
-            $table->integer('delivered');
+            $table->integer('driver_id')->nullable();
+            $table->string('assigned')->nullable();
+            $table->integer('accepted')->nullable();
+            $table->integer('picked_up')->nullable();
+            $table->integer('delivered')->nullable();
             $table->timestamps();
         });
     }

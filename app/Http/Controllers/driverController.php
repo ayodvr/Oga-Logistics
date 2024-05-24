@@ -31,11 +31,13 @@ class driverController extends Controller
 
     public function pickedUp($id){
         Customer::find($id)->update(['accepted'=> 2]);
+        Customer::find($id)->update(['picked_up'=> 1]);
         return back();
     }
 
     public function delivered($id){
         Customer::find($id)->update(['accepted'=> 3]);
+        Customer::find($id)->update(['delivered'=> 1]);
         return back();
     }
 

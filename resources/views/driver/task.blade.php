@@ -65,19 +65,19 @@
                                                 <td>
                                                   <div class="py-2 border-bottom">
                                                     @if($allocated->accepted == 1 || $allocated->accepted == 2 || $allocated->accepted == 3 )
-                                                    <button class="btn btn-xs btn-primary" disabled>Accepted</button>
+                                                    <button class="btn btn-xs btn-primary" hidden>Accepted</button>
                                                     @else
                                                     <a href="{{route('accept_order', $allocated->id)}}" class="btn btn-xs btn-primary">Accept</a>
                                                     @endif
                                                     @if($allocated->accepted == 2 || $allocated->accepted == 3)
-                                                    <button class="btn btn-xs btn-info" disabled>Picked Up</button>
+                                                    <button class="btn btn-xs btn-info" hidden>Picked Up</button>
                                                     @else
                                                     <a href="{{route('picked_up', $allocated->id)}}" class="btn btn-xs btn-primary">Pick Up</a>
                                                     @endif
                                                     @if($allocated->accepted == 3)
                                                     <button class="btn btn-xs btn-success" disabled>Delivered</button>
                                                     @else
-                                                    <a href="{{route('delivered', $allocated->id)}}" class="btn btn-xs btn-primary">Delivered</a>
+                                                    <a href="{{route('delivered', $allocated->id)}}" class="btn btn-xs btn-primary">Deliver</a>
                                                     @endif
                                                   </div>
                                                 </td>

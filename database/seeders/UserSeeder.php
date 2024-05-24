@@ -52,7 +52,7 @@ class UserSeeder extends Seeder
         $admin =  \App\Models\User::create([
             'name' => 'Ibrahim',
             'last_name' => 'Ajibade',
-            'email'=>    'halifa@test.com',
+            'email'=>    'khalifa@test.com',
             'phone'=>    '09037949021',
             // 'verified'=> 1,
             'email_verified_at' => now(),
