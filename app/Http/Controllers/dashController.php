@@ -1,7 +1,9 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Models\Customer;
 use App\Models\User;
+use App\Models\Estimate;
 use Auth;
 
 
@@ -35,7 +37,9 @@ class dashController extends Controller
 
     public function orderhistory()
     {
-        return view('customer.orderhistory');
+        $user = auth()->user()->id;
+        $orders = Customer::where('user_id', $user)->get();
+        return view('customer.orderhistory')->with('orders', $orders);
     }
 
 }

@@ -18,67 +18,57 @@
     </div>
         
     <div class="rest-container">
+        @foreach($orders as $orders)
         <div class="all-history-items remaining-height">
-                <div class="history-items-container trip-history">
-                    <div class="history-item">
-                        <div><span class="label-title">Tracking ID:</span> <span class="font-13">HD345</span></div>
-                        <!--Date & Time Container Start-->
-                        <div class="border-bottom-primary thin">
-                            <div class="status-container">
-                                <div class="date float-left">
-                                    <img src="{{asset('mobstyle/icons/calendar-dark.svg')}}" alt="Calendar Icon" class="calendar-icon"> 29 April
+            <div class="history-items-container trip-history">
+                <div class="history-item">
+                    <div><span class="label-title" style="color: black">Tracking ID:</span> <span style="color: black">{{$orders->tracking}}</span></div>
+                    <br>
+                    <div class="addresses-container position-relative">
+                        <div class="height-auto">
+                            <div class="w-100 map-input-container map-input-container-top">
+                                <span class="fas fa-location-arrow location-icon-rotate map-input-icon"></span>
+                                <div class="map-input display-flex">
+                                    <input class="controls flex-1" type="text"
+                                        placeholder="Enter an origin location" style="color: black" value="{{$orders->origin}}" disabled>
                                 </div>
-                                <div class="status-none float-right text-uppercase">
-                                    <span class="fas fa-clock font-weight-light"></span> 16:12
-                                </div>
-                                <div class="clearfix"></div>
                             </div>
-                        </div>
-                        <!--Address Container Start-->
-                        <div class="addresses-container position-relative">
-                            <div class="height-auto">
-                                <div class="w-100 map-input-container map-input-container-top">
-                                    <span class="fas fa-location-arrow location-icon-rotate map-input-icon"></span>
-                                    <div class="map-input display-flex">
-                                        <input class="controls flex-1 font-weight-light" type="text"
-                                               placeholder="Enter an origin location" value="555 Middlefield Rd" disabled>
+                            <a class="href-decoration-none">
+                                <div class="w-100 map-input-container map-input-container-bottom">
+                                    <span class="map-input-icon"><img src="{{asset('mobstyle/icons/circle.svg')}}"  alt="Current Location Icon"></span>
+                                    <div class="map-input display-flex border-0 controls flex-1 align-items-center" style="color: black">
+                                        {{$orders->destination}}
                                     </div>
+                                    <span class="dotted-line"></span>
                                 </div>
-                                <a href="trip-description.html" class="href-decoration-none">
-                                    <div class="w-100 map-input-container map-input-container-bottom">
-                                        <span class="map-input-icon"><img src="{{asset('mobstyle/icons/circle.svg')}}"  alt="Current Location Icon"></span>
-                                        <div class="map-input display-flex border-0 controls flex-1 font-weight-light align-items-center">
-                                            Palo Alto
-                                        </div>
-                                        <span class="dotted-line"></span>
-                                    </div>
-                                </a>
-                            </div>
+                            </a>
                         </div>
-                        <!--Address Container End-->
-                        <br>
-                        <!--Trip Costs Container Start-->
-                        <div class="border-bottom-primary thin width-48 border-bottom-light-grey">
-                            <div class="text-uppercase trip-fare">Trip Fare</div>
-                        </div>
+                    </div>
+                    <!--Address Container End-->
+                    <br>
+                    <!--Trip Costs Container Start-->
+                    <div class="border-bottom-primary thin width-48 border-bottom-light-grey">
+                        <div class="text-uppercase trip-fare" style="color: black">Trip Fare</div>
+                    </div>
 
-                        <div class="trip-fare-container font-weight-light">
-                            <div class="trip-fare-item">
-                                <span class="float-left">Cash</span>
-                                <span class="float-right blue-price">$12.30</span>
-                                <span class="clearfix"></span>
-                            </div>
-                            
-                            <div class="trip-fare-item">
-                                {{-- <span class="float-left">Track Order</span> --}}
-                                <br>
-                                <button class="btn btn-xs btn-dark float-right">Track Order</button>
-                                <span class="clearfix"></span>
-                            </div>
+                    <div class="trip-fare-container font-weight-light">
+                        <div class="trip-fare-item">
+                            <span class="float-left" style="color: black">Cost</span>
+                            <span class="float-right black-price" style="color: black">${{$orders->trip_cost}}</span>
+                            <span class="clearfix"></span>
+                        </div>
+                        
+                        <div class="trip-fare-item">
+                            {{-- <span class="float-left">Track Order</span> --}}
+                            <br>
+                            <button class="btn btn-xs btn-dark float-right">Track Order</button>
+                            <span class="clearfix"></span>
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
+        @endforeach
     </div>
 
 </div>
