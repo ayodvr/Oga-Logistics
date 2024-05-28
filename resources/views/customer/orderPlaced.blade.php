@@ -33,6 +33,7 @@
             <div class="all-container text-center font-weight-light">
                 Your order has been initiated, Rider will be in touch with you shortly.
             </div>
+            <br>
             <article class="card">
                 <div class="card-body row">
                     <div class="col"> <strong>Shipping From:</strong> <br>{{$summary->origin}}</div>

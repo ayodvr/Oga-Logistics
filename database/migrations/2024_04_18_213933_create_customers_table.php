@@ -26,6 +26,7 @@ return new class extends Migration
             $table->string('assigned')->nullable();
             $table->integer('accepted')->nullable();
             $table->integer('picked_up')->nullable();
+            $table->integer('declined')->nullable();
             $table->integer('delivered')->nullable();
             $table->timestamps();
         });

@@ -29,10 +29,23 @@
                                 <!-- end page title -->
                             </div>
                         </div>
-                        <!-- end row -->
-                       <!-- start Validation row -->
+                        @if(count($errors) > 0)
+                        @foreach($errors->all() as $error)
+                        <div class="alert alert-danger" style="width:92%; margin:auto">
+                            {{$error}}</div>
+                        @endforeach
+                        @endif
+                        @if(session('success'))
+                        <div class="alert alert-success" style="width:92%; margin:auto">
+                        {{session('success')}}</div>
+                        @endif
+
+                        @if(session('error'))
+                        <div class="alert alert-danger" style="width:92%; margin:auto">
+                        {{session('error')}}</div>
+                         @endif
+                         <br>
                        <div class="row formavlidation-wrapper">
-                          
                             <div class="col-xl-12">
                                 <div class="card card-statistics">
                                     <div class="card-header">
@@ -41,7 +54,20 @@
                                         </div>
                                     </div>
                                     <div class="card-body">
-                                        <form id="signupForm1" method="post" class="form-horizontal">
+                                        <form method="post" class="form-horizontal" action="{{route('storePartner')}}">
+                                          @csrf
+                                          <div class="form-group">
+                                            <label class="control-label" for="firstname1">First Name</label>
+                                            <div class="mb-2">
+                                                <input type="text" class="form-control" name="name" placeholder="First Name" />
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                          <label class="control-label" for="firstname1">Last Name</label>
+                                          <div class="mb-2">
+                                              <input type="text" class="form-control" name="last_name" placeholder="Last Name" />
+                                          </div>
+                                      </div>
                                             <div class="form-group">
                                                 <label class="control-label" for="firstname1">Company/Business Name</label>
                                                 <div class="mb-2">
@@ -81,11 +107,41 @@
                                                 </div>
                                                 <div class="form-group col-md-6">
                                                 <label for="inputState">Local Government Area</label>
-                                                    <select class="form-control" name="slga" id="slga" placeholder="State LGA">
+                                                    <select class="form-control" name="lga" id="lga" placeholder="State LGA">
                                                     </select>
                                                 </div>
                                             </div>
                                             <div class="form-group">
+                                              <label class="control-label" for="password1">Password</label>
+                                              <div class="input-group">
+                                                {{-- <div class="input-group-prepend">
+                                                 <span><img src="{{asset('mobstyle/icons/lock.svg')}}" alt="Lock Icon"></span>
+                                                </div> --}}
+                                                <input class="form-control" type="password" name="password" placeholder="Password">
+                                                {{-- <div class="input-group-append password-visibility">
+                                                    <span>
+                                                        <img src="{{asset('mobstyle/icons/eye.svg')}}" alt="Password Visibility Icon">
+                                                    </span>
+                                                </div> --}}
+                                                <x-input-error :messages="$errors->get('password')" class="mt-2" />
+                                            </div>
+                                          </div>
+                                          <div class="form-group">
+                                            <label class="control-label" for="password1">Confirm Password</label>
+                                            <div class="input-group">
+                                              {{-- <div class="input-group-prepend">
+                                                  <span><img src="{{asset('mobstyle/icons/lock.svg')}}" alt="Lock Icon"></span>
+                                              </div> --}}
+                                              <input class="form-control" type="password" name="password_confirmation" placeholder="Confirm Password">
+                                              {{-- <div class="input-group-append password-visibility">
+                                                  <span>
+                                                      <img src="{{asset('mobstyle/icons/eye.svg')}}" alt="Password Visibility Icon">
+                                                  </span>
+                                              </div> --}}
+                                              <x-input-error :messages="$errors->get('password_confirmation')" class="mt-2" />
+                                          </div>
+                                          </div>
+                                            {{-- <div class="form-group">
                                                 <label class="control-label" for="password1">Password</label>
                                                 <div class="mb-2">
                                                     <input type="password" class="form-control" id="password" name="password" placeholder="Password" />
@@ -96,9 +152,9 @@
                                                 <div class="mb-2">
                                                     <input type="password" class="form-control" id="confirm_password1" name="confirm_password1" placeholder="Confirm password" />
                                                 </div>
-                                            </div>
+                                            </div> --}}
                                             <div class="form-group">
-                                                <button type="submit" class="btn btn-primary" name="signup1" value="Sign up">Create Account</button>
+                                                <button type="submit" class="btn btn-primary">Create Account</button>
                                             </div>
                                         </form>
                                     </div>
@@ -164,7 +220,7 @@
   
   function show(ele) {
   
-  $("#slga").empty();
+  $("#lga").empty();
   $('#writew').val('');
   
   var parts = 
@@ -1016,7 +1072,7 @@
   
   var msg = ele.value;
   
-  var ele1 = document.getElementById('slga');
+  var ele1 = document.getElementById('lga');
   
   for (i = 0; i < parts[msg].length; i++) {
   

@@ -41,6 +41,12 @@ class driverController extends Controller
         return back();
     }
 
+    public function declined($id){
+        Customer::find($id)->update(['declined'=> 1]);
+        return back();
+    }
+
+
 
     public function statement()
     {

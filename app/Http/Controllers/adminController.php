@@ -5,6 +5,10 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Customer;
+use App\Models\Driver;
+use App\Models\Partner;
+use Illuminate\Validation\Rules;
+use Illuminate\Support\Facades\Hash;
 
 class adminController extends Controller
 {
@@ -17,23 +21,58 @@ class adminController extends Controller
 
     public function managedriver()
     {
-        
-            return view('admin.managedriver');
+        $drivers = Driver::all();
+        return view('admin.managedriver')->with('drivers', $drivers);
        
     }
 
     public function driverreg()
     {
-        
-            return view('admin.driverreg');
-       
+        return view('admin.driverreg');
+    }
+
+    public function storeDriver(Request $request)
+    {
+        $request->validate([
+                'name' => ['required', 'string', 'max:255'],
+                'last_name' => ['required', 'string', 'max:191'],
+                'email' => ['required', 'string', 'lowercase', 'email', 'max:255', 'unique:'.User::class],
+                'phone' => ['required', 'string', 'max:11'],
+                'password' => ['required', 'confirmed', Rules\Password::defaults()],
+            ]);
+          
+            $random = random_int(100000, 999999);
+            
+            $user = User::create([
+                'name' => $request->name,
+                'last_name' => $request->last_name,
+                'email' => $request->email,
+                'phone' => $request->phone,
+                'password' => Hash::make($request->password),
+            ]);
+
+            $user->addRole('driver');
+
+            if($user){
+
+                $driver = Driver::create([
+                    'name' => $request->name,
+                    'last_name' => $request->last_name,
+                    'email' => $request->email,
+                    'phone' => $request->phone,
+                    'nin' => $request->nin,
+                    'state' => $request->state,
+                    'lga' => $request->lga,
+                ]);
+
+                return back()->with('success', 'Driver has been registered');
+            }
     }
 
     public function managepartners()
     {
-        
-            return view('admin.managepartners');
-       
+        $partners = Partner::all();
+        return view('admin.managepartners')->with('partners', $partners);
     }
 
     public function partnersreg()
@@ -41,6 +80,46 @@ class adminController extends Controller
         
             return view('admin.partnersreg');
        
+    }
+
+    public function storePartner(Request $request)
+    {
+        $request->validate([
+                'name' => ['required', 'string', 'max:255'],
+                'last_name' => ['required', 'string', 'max:191'],
+                'email' => ['required', 'string', 'lowercase', 'email', 'max:255', 'unique:'.User::class],
+                'phone' => ['required', 'string', 'max:11'],
+                'password' => ['required', 'confirmed', Rules\Password::defaults()],
+            ]);
+          
+            $random = random_int(100000, 999999);
+            
+            $user = User::create([
+                'name' => $request->name,
+                'last_name' => $request->last_name,
+                'email' => $request->email,
+                'phone' => $request->phone,
+                'password' => Hash::make($request->password),
+            ]);
+
+            $user->addRole('partners');
+
+            if($user){
+
+                $driver = Partner::create([
+                    'name'      => $request->name,
+                    'last_name' => $request->last_name,
+                    'email'     => $request->email,
+                    'phone'     => $request->phone,
+                    'bname'     => $request->bname,
+                    'cac'       => $request->cac,
+                    'address'   => $request->address,
+                    'state'     => $request->state,
+                    'lga'       => $request->lga
+                ]);
+
+                return back()->with('success', 'Partner has been registered');
+            }
     }
 
 
@@ -60,8 +139,9 @@ class adminController extends Controller
 
     public function manageadminuser()
     {
-        
-            return view('admin.manageadminuser');
+        $partners = Partner::all();
+        return view('admin.manageadminuser')->with('partners', $partners);
+            ;
        
     }
 
@@ -70,6 +150,31 @@ class adminController extends Controller
         
             return view('admin.adminuserreg');
        
+    }
+
+    public function storeAdminUser(Request $request)
+    {
+        $request->validate([
+                'name' => ['required', 'string', 'max:255'],
+                'last_name' => ['required', 'string', 'max:191'],
+                'email' => ['required', 'string', 'lowercase', 'email', 'max:255', 'unique:'.User::class],
+                'phone' => ['required', 'string', 'max:11'],
+                'password' => ['required', 'confirmed', Rules\Password::defaults()],
+            ]);
+          
+            $random = random_int(100000, 999999);
+            
+            $user = User::create([
+                'name' => $request->name,
+                'last_name' => $request->last_name,
+                'email' => $request->email,
+                'phone' => $request->phone,
+                'password' => Hash::make($request->password),
+            ]);
+
+            $user->addRole('admin');
+
+            return back()->with('success', 'Admin user has been registered');
     }
 
     public function alladminuser()

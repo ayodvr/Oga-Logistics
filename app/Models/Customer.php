@@ -24,7 +24,8 @@ class Customer extends Model
         'assigned',
         'accepted',
         'picked_up',    
-        'delivered' 
+        'delivered',
+        'declined' 
     ];
 
         // public function users(): HasMany

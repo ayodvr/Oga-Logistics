@@ -37,29 +37,34 @@ Route::get('/address', "App\Http\Controllers\dashcontroller@address")->middlewar
 Route::get('/trackorder/{id}', "App\Http\Controllers\dashcontroller@trackorder")->name('trackorder');
 Route::get('/orderhistory', "App\Http\Controllers\dashcontroller@orderhistory")->name('orderhistory');
 
-
+Route::group(['middleware' => ['auth']], function() {
 //Admin Dashboard Routes
 Route::get('/admindashboard', "App\Http\Controllers\admincontroller@admindashboard")->name('admindashboard');
 Route::get('/managedriver', "App\Http\Controllers\admincontroller@managedriver")->name('managedriver');
 Route::get('/driverreg', "App\Http\Controllers\admincontroller@driverreg")->name('driverreg');
+Route::post('/storeDriver', "App\Http\Controllers\admincontroller@storeDriver")->name('storeDriver');
 Route::get('/managepartners', "App\Http\Controllers\admincontroller@managepartners")->name('managepartners');
 Route::get('/partnersreg', "App\Http\Controllers\admincontroller@partnersreg")->name('partnersreg');
+Route::post('/storePartner', "App\Http\Controllers\admincontroller@storePartner")->name('storePartner');
 Route::get('/alldriver', "App\Http\Controllers\admincontroller@alldriver")->name('alldriver');
 Route::get('/allpartner', "App\Http\Controllers\admincontroller@allpartner")->name('allpartner');
 Route::get('/manageadminuser', "App\Http\Controllers\admincontroller@manageadminuser")->name('manageadminuser');
 Route::get('/adminuserreg', "App\Http\Controllers\admincontroller@adminuserreg")->name('adminuserreg');
+Route::post('/store_admin_user', "App\Http\Controllers\admincontroller@storeAdminUser")->name('storeAdminUser');
 Route::get('/alladminuser', "App\Http\Controllers\admincontroller@alladminuser")->name('alladminuser');
 Route::get('/alluser', "App\Http\Controllers\admincontroller@alluser")->name('alluser');
 Route::get('/orderallocation', "App\Http\Controllers\admincontroller@orderallocation")->name('orderallocation');
 
 //Driver Dashboard Routes
 Route::get('/driverdash', "App\Http\Controllers\drivercontroller@allocatedRide")->name('allocatedRide');
+Route::post('/add-driver', "App\Http\Controllers\drivercontroller@add_driver")->name('addDriver');
 Route::get('/task', "App\Http\Controllers\drivercontroller@task")->name('task');
 Route::get('/statement', "App\Http\Controllers\drivercontroller@statement")->name('statement');
 Route::get('/accept_order/{id}', "App\Http\Controllers\drivercontroller@acceptOrder")->name('accept_order');
 Route::get('/picked_up/{id}', "App\Http\Controllers\drivercontroller@pickedUp")->name('picked_up');
 Route::get('/delivered/{id}', "App\Http\Controllers\drivercontroller@delivered")->name('delivered');
-
+Route::get('/decline/{id}', "App\Http\Controllers\drivercontroller@declined")->name('declined');
+});
 //Partner Dashboard Routes
 // Route::get('/orderhistory', "App\Http\Controllers\partnercontroller@orderhistory")->name('orderhistory');
 // Route::get('/trackorder', "App\Http\Controllers\partnercontroller@trackorder")->name('trackorder');
