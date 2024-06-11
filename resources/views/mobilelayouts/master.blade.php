@@ -30,7 +30,7 @@
                 </div>
             </div>
             @include('includes.header')
-            <div class="app-container">
+            <div class="app-container" >
                 @include('includes.aside')
                 <!-- begin app-main -->
                 <div class="app-main" id="main">

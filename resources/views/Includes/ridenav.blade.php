@@ -1,15 +1,15 @@
 @role('customer')
-    <div class="mini-profile-info">
+    <div class="mini-profile-info" style="background-image: linear-gradient(120deg, #f6d365 0%, #fda085 100%);">
         <div class="menu-close">
             <span class="float-right">
-                <img src="{{asset('mobstyle/icons/close.svg')}}" alt="Close Icon">
+                <img src="{{asset('mobstyle/icons/close.svg')}}"  alt="Close Icon">
             </span>
         </div>
         <div class="profile-picture text-center">
-            <img src="{{asset('mobstyle/images/profile-1.png')}}" alt="Profile Picture">
+            <img src="{{asset('mobstyle/images/3d1.png')}}" style="width:250px;height:170px;" alt="Profile Picture">
         </div>
         <div class="profile-info">
-            <div class="profile-name text-center">{{ Auth::user()->name }}</div>
+            <div class="profile-name text-center" style="font-size: large,text-color: black">{{ Auth::user()->name }}</div>
             <div class="profile-email text-center">{{ Auth::user()->email }}</div>
         </div>
     </div>
@@ -38,16 +38,21 @@
                 <span class="menu-item-click fas fa-arrow-right"></span>
             </a> --}}
             <a class="menu-item" href="/orderhistory">
-                <span class="menu-item-icon fa fa-history" style="color: black"></span>
-                <span class="menu-item-title">Order History</span>
-                <span class="menu-item-click fas fa-arrow-right"></span>
-            </a>
-            <a class="menu-item" href="history.html">
                 <span class="menu-item-icon menu-light">
                     <img src="{{asset('mobstyle/icons/history-light.svg')}}" alt="History Icon">
                 </span>
                 <span class="menu-item-icon menu-dark">
                     <img src="{{asset('mobstyle/icons/history.svg')}}" alt="History Icon">
+                </span>
+                <span class="menu-item-title">Order History</span>
+                <span class="menu-item-click fas fa-arrow-right"></span>
+            </a>
+            <a class="menu-item" href="history.html">
+                <span class="menu-item-icon menu-dark support">
+                    <img src="{{asset('mobstyle/icons/support.svg')}}" alt="Support Icon">
+                </span>
+                <span class="menu-item-icon menu-light support">
+                    <img src="{{asset('mobstyle/icons/support-light.svg')}}" alt="Support Lighter Icon">
                 </span>
                 <span class="menu-item-title">Contact Us</span>
                 <span class="menu-item-click fas fa-arrow-right"></span>
@@ -57,6 +62,7 @@
                         @csrf
             <a href="route('logout')" class="menu-item margin-top-auto" onclick="event.preventDefault();
                                             this.closest('form').submit();">
+            
                 <span class="menu-item-icon menu-dark logout">
                     <img src="{{asset('mobstyle/icons/logout.svg')}}" alt="Logout Icon">
                 </span>
@@ -64,6 +70,7 @@
                     <img src="{{asset('mobstyle/icons/logout-light.svg')}}" alt="Logout Icon">
                 </span>
                 <span class="menu-item-title logout">Log out</span>
+            </form>
                 <span class="menu-item-click fas fa-arrow-right"></span>
             </a>
         </div>
@@ -83,14 +90,14 @@
 @endrole
 
  @role('driver')
-    <div class="mini-profile-info">
+    <div class="mini-profile-info" style="background-image: linear-gradient(120deg, #f6d365 0%, #fda085 100%);">
         <div class="menu-close">
             <span class="float-right">
                 <img src="{{asset('mobstyle/icons/close.svg')}}" alt="Close Icon">
             </span>
         </div>
         <div class="profile-picture text-center">
-            <img src="{{asset('mobstyle/images/profile-3.png')}}" alt="Profile Picture">
+        <img src="{{asset('mobstyle/images/3d1.png')}}" style="width:250px;height:170px;" alt="Profile Picture">
         </div>
         <div class="profile-info">
             <div class="profile-name text-center">Jonathan McBerly</div>
@@ -185,17 +192,17 @@
 @endrole
 
 @role('partners')
-    <div class="mini-profile-info">
+    <div class="mini-profile-info" style="background-image: linear-gradient(120deg, #f6d365 0%, #fda085 100%);">
         <div class="menu-close">
             <span class="float-right">
                 <img src="{{asset('mobstyle/icons/close.svg')}}" alt="Close Icon">
             </span>
         </div>
         <div class="profile-picture text-center">
-            <img src="{{asset('mobstyle/images/profile-1.png')}}" alt="Profile Picture">
+        <img src="{{asset('mobstyle/images/3d1.png')}}" style="width:250px;height:170px;" alt="Profile Picture">
         </div>
         <div class="profile-info">
-            <div class="profile-name text-center">{{ Auth::user()->name }}</div>
+            <div class="profile-name text-center" style="font-size: large,text-color: black">{{ Auth::user()->name }}</div>
             <div class="profile-email text-center">{{ Auth::user()->email }}</div>
         </div>
     </div>
@@ -213,7 +220,7 @@
                     <span class="menu-item-click fas fa-arrow-right"></span>
                 </div>
             </a>
-            <a class="menu-item" href="/trackorder">
+            {{-- <a class="menu-item" href="/trackorder">
                 <span class="menu-item-icon menu-dark profile">
                     <img src="{{asset('mobstyle/icons/avatar-dark.svg')}}" alt="Avatar Darker Icon">
                 </span>
@@ -222,18 +229,23 @@
                 </span>
                 <span class="menu-item-title profile">Track My Order</span>
                 <span class="menu-item-click fas fa-arrow-right"></span>
-            </a>
+            </a> --}}
             <a class="menu-item" href="/orderhistory">
-                <span class="menu-item-icon far fa-money-bill-alt"></span>
-                <span class="menu-item-title">Order History</span>
-                <span class="menu-item-click fas fa-arrow-right"></span>
-            </a>
-            <a class="menu-item" href="history.html">
                 <span class="menu-item-icon menu-light">
                     <img src="{{asset('mobstyle/icons/history-light.svg')}}" alt="History Icon">
                 </span>
                 <span class="menu-item-icon menu-dark">
                     <img src="{{asset('mobstyle/icons/history.svg')}}" alt="History Icon">
+                </span>
+                <span class="menu-item-title">Order History</span>
+                <span class="menu-item-click fas fa-arrow-right"></span>
+            </a>
+            <a class="menu-item" href="history.html">
+                <span class="menu-item-icon menu-dark support">
+                    <img src="{{asset('mobstyle/icons/support.svg')}}" alt="Support Icon">
+                </span>
+                <span class="menu-item-icon menu-light support">
+                    <img src="{{asset('mobstyle/icons/support-light.svg')}}" alt="Support Lighter Icon">
                 </span>
                 <span class="menu-item-title">Contact Us</span>
                 <span class="menu-item-click fas fa-arrow-right"></span>
@@ -243,6 +255,7 @@
                         @csrf
             <a href="route('logout')" class="menu-item margin-top-auto" onclick="event.preventDefault();
                                             this.closest('form').submit();">
+            
                 <span class="menu-item-icon menu-dark logout">
                     <img src="{{asset('mobstyle/icons/logout.svg')}}" alt="Logout Icon">
                 </span>
@@ -250,6 +263,7 @@
                     <img src="{{asset('mobstyle/icons/logout-light.svg')}}" alt="Logout Icon">
                 </span>
                 <span class="menu-item-title logout">Log out</span>
+            </form>
                 <span class="menu-item-click fas fa-arrow-right"></span>
             </a>
         </div>

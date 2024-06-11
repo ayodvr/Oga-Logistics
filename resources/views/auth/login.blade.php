@@ -1,115 +1,61 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="{{asset('mobstyle/css/bootstrap.min.css')}}">
-    <!-- FontAwesome -->
-    <link rel="stylesheet" href="{{asset('mobstyle/css/fontawesome.css')}}">
-    <!-- Main Style -->
-    <link rel="stylesheet" href="{{asset('mobstyle/css/styles.css')}}">
-    <title>Sign In</title>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OgaLogistics</title>
+    <link rel="stylesheet" type="text/css" href="{{asset('log/css/bootstrap.min.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('log/css/fontawesome-all.min.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('log/css/iofrm-style.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('log/css/iofrm-theme4.css')}}">
 </head>
 <body>
-
-<!--Loading Container Start-->
-<div id="load" class="loading-overlay display-flex flex-column justify-content-center align-items-center">
-    <div class="primary-color font-28 fas fa-spinner fa-spin"></div>
-</div>
-<!--Loading Container End-->
-
-<div class="row h-100">
-    <div class="col-xs-12 col-sm-12">
-
-        <!--Page Title & Icons Start-->
-        <div class="header-icons-container text-center">
-            <a href="sign-up.html">
-                <span class="float-left">
-                    <img src="{{asset('mobstyle/icons/back.svg')}}" alt="Back Icon">
-                </span>
-            </a>
-            <span>Sign In</span>
-        </div>
-        <!--Page Title & Icons End-->
-
-        <div class="rest-container">
-            <div class="text-center header-icon-logo-margin header-icon-logo-margin-extra">
-                <img src="{{asset('mobstyle/images/logo-main.svg')}}" alt="Main Logo">
+    <div class="form-body">
+        
+        <div class="row">
+            <div class="img-holder">
+                <div class="bg"></div>
+                <div class="info-holder">
+                    <img src="{{asset('log/images/servv.png')}}" alt="">
+                </div>
             </div>
-
-            <!--Sign Up Container Start-->
-            <div class="sign-up-form-container text-center">
-                <form class="width-100" method="POST" action="{{ route('login') }}" >
+            
+            <div class="form-holder" style="background-image:url({{asset('log/images/19241.jpg);')}}">
+                
+                <div class="form-content">
+                    
+                    <div class="form-items">
+                        <div class="logo">
+                            <img class="logo-size" style="width: 280px;height: auto;margin-bottom: 100px;" src="{{asset('log/images/log2.png')}}" alt="">
+                        </div>
+                        <h3>Welcome to OGALOGISTICS</h3>
+                        <p>Your gateway to effortless shipping and tracking.</p>
+                        <div class="page-links">
+                            <a href="login4.html" class="active">Login</a><a href="/register">Register</a>
+                        </div>
+                        <form method="POST" action="{{ route('login') }}" >
                     @csrf
-                    <!--Sign Up Form Field Start-->
-                    <div class="form-group">
-                        <div class="input-group">
-                            <div class="input-group-prepend">
-                                <span>
-                                    <img src="{{asset('mobstyle/icons/avatar-light.svg')}}" alt="Avatar Icon">
-                                </span>
+                            <input class="form-control" type="text" name="email" placeholder="E-mail Address" required>
+                            <input class="form-control" type="password" name="password" placeholder="Password" required>
+                            <x-input-error :messages="$errors->get('password')" class="mt-2" />
+                            <div class="form-button">
+                                <button id="submit" type="{{ __('login') }}" class="ibtn">Login</button> 
+                                <a href="/forgot-password">Forget password?</a>
                             </div>
-                            <input class="form-control" type="email" autocomplete="off" name="email" placeholder="Username">
-							<x-input-error :messages="$errors->get('email')" class="mt-2" />
-
-                        </div>
+                        </form>
+                       
                     </div>
-                    <!--Sign Up Form Field End-->
-
-                    <!--Sign Up Form Field Start-->
-                    <div class="form-group">
-                        <div class="input-group">
-                            <div class="input-group-prepend">
-                                <span>
-                                    <img src="{{asset('mobstyle/icons/lock.svg')}}" alt="Lock Icon">
-                                </span>
-                            </div>
-                            <input class="form-control" type="password" name="password" placeholder="Password">
-                            <div class="input-group-append password-visibility">
-                                <span>
-                                    <img src="{{asset('mobstyle/icons/eye.svg')}}" alt="Password Visibility Icon">
-                                </span>
-                            </div>
-							<x-input-error :messages="$errors->get('password')" class="mt-2" />
-
-                        </div>
-                    </div>
-                    <!--Sign Up Form Field End-->
-
-                    <div class="form-submit-button">
-					<button type="{{ __('login') }}" class="btn btn-primary text-uppercase font-weight-normal" style="width: 100%;">
-						Sign in 
-					</button>
-                    </div>
-                </form>
+                </div>
             </div>
-            <!--Sign Up Container Start-->
-
         </div>
     </div>
-
-    <!--Terms And Conditions Agreement Container Start-->
-    <div class="col-xs-12 col-sm-12 text-center sms-rate-text font-roboto flex-end margin-bottom-30">
-        <div class="container-sms-rate-text width-100 font-11">
-            <span class="light-gray font-weight-light">By signing up you have agreed to our </span>
-            <br/>
-            <a href="#" class="dark-link">
-                <span class="font-weight-light">Terms of Use & Privacy Policy</span>
-            </a>
-        </div>
-    </div>
-    <!--Terms And Conditions Agreement Container End-->
-
-</div>
-<!-- Optional JavaScript -->
-<!-- jQuery first, then Popper.js, then Bootstrap JS -->
-<script src="{{asset('mobstyle/js/jquery-3.4.1.js')}}"></script>
-<script src="{{asset('mobstyle/js/popper.min.js')}}"></script>
-<script src="{{asset('mobstyle/js/bootstrap.min.js')}}"></script>
-<script src="{{asset('mobstyle/js/main.js')}}"></script>
+<script src="js/jquery.min.js"></script>
+<script src="js/popper.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/main.js"></script>
 </body>
 
+<!-- Mirrored from brandio.io/envato/iofrm/html/login4.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 03 Jun 2024 15:39:16 GMT -->
 </html>

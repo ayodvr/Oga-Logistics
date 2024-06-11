@@ -9,7 +9,7 @@
             <span class="float-left back-to-map hidden">
                 <img src="{{asset('mobstyle/icons/back.svg')}}" alt="Back Icon">
             </span>
-            <span class="title">Oga Logistics</span>
+            <span class="title">Add Route</span>
             <a href="#">
                 <span class="float-right menu-open closed">
                     <img src="{{asset('mobstyle/icons/menu.svg')}}" alt="Menu Hamburger Icon">
@@ -88,7 +88,7 @@
                 <input type="hidden" id="trip_cost" name="trip_cost">
                 <input type="hidden" value="{{auth()->user()->id}}" name="user_id">
             <div style="margin-top: 10px">
-                <button type="submit" id="button1" class="btn btn-primary" style="width:100%">Request a Ride</button>
+                <button type="submit" id="button1" class="btn btn-primary" style="width:100%;background-color:#f78f33;">Request a Ride</button>
             </div>
             </div>
             

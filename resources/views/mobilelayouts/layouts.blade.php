@@ -47,7 +47,7 @@
     <div class="primary-color font-28 fas fa-spinner fa-spin"></div>
 </div> --}}
 <!--Loading Container End-->
-<div class="row h-100">
+<div class="row h-100" >
 	@yield('content')
     <!--Main Menu Start-->
 <div class="main-menu hidden-soft">

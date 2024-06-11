@@ -139,7 +139,7 @@
                                 <img src="{{asset('assets/img/avtar/02.jpg')}}" alt="avtar-img">
                                 <span class="bg-success user-status"></span>
                             </a>
-                            <div class="dropdown-menu animated fadeIn" aria-labelledby="navbarDropdown">
+                            <div class="dropdown-menu animated fadeIn" aria-labelledby="navbarDropdown"  >
                                 <div class="bg-gradient px-4 py-3">
                                     <div class="d-flex align-items-center justify-content-between">
                                         <div class="mr-1">
