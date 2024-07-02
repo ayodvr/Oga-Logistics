@@ -6,7 +6,8 @@
             </span>
         </div>
         <div class="profile-picture text-center">
-            <img src="{{asset('mobstyle/images/3d1.png')}}" style="width:250px;height:170px;" alt="Profile Picture">
+            
+            <img src="{{asset('mobstyle/icons/profile.svg')}}" style="width:250px;height:170px;" alt="Profile Picture">
         </div>
         <div class="profile-info">
             <div class="profile-name text-center" style="font-size: large,text-color: black">{{ Auth::user()->name }}</div>
@@ -199,7 +200,7 @@
             </span>
         </div>
         <div class="profile-picture text-center">
-        <img src="{{asset('mobstyle/images/3d1.png')}}" style="width:250px;height:170px;" alt="Profile Picture">
+        <img src="{{asset('mobstyle/icons/profile.svg')}}" style="width:250px;height:170px;" alt="Profile Picture">
         </div>
         <div class="profile-info">
             <div class="profile-name text-center" style="font-size: large,text-color: black">{{ Auth::user()->name }}</div>

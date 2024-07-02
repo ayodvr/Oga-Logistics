@@ -7,7 +7,7 @@
             <div class="navbar-header d-flex align-items-center">
                 <a href="javascript:void:(0)" class="mobile-toggle"><i class="ti ti-align-right"></i></a>
                 <a class="navbar-brand" href="index.html">
-                    <img src="{{ asset('assets/img/logo.png') }}" class="img-fluid logo-desktop" alt="logo" />
+                    <img src="{{asset('log/images/logblack.png')}}" class="img-fluid logo-desktop" alt="logo" />
                     <img src="{{ asset('assets/img/logo-icon.png') }}" class="img-fluid logo-mobile" alt="logo" />
                 </a>
             </div>
@@ -171,5 +171,4 @@
         <!-- end navbar -->
     </header>
     <!-- end app-header -->
-
     

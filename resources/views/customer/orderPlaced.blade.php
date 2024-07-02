@@ -1,5 +1,4 @@
-@extends('mobilelayouts.layouts')
-
+@extends('mobilelayouts.track')
 @section('content')
 <div class="col-xs-12 col-sm-12">
     <!--Page Title & Icons Start-->

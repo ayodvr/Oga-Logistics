@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-    <title>OgaLogistics -Riders Dashboard</title>
+    <title>Ogaglobal Logistics - Dashboard</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
     <meta name="description" content="Admin template that can be used to build dashboards for CRM, CMS, etc." />
@@ -15,7 +15,6 @@
     <!-- app style -->
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/style.css') }}" />
 </head>
-
 <body>
     <!-- begin app -->
     <div class="app">

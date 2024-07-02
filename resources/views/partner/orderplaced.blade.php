@@ -1,9 +1,5 @@
-@extends('mobilelayouts.layouts')
-
+@extends('mobilelayouts.track')
 @section('content')
-
-
-
 <div class="col-xs-12 col-sm-12">
     <!--Page Title & Icons Start-->
     <div class="header-icons-container text-center">
@@ -36,6 +32,7 @@
             <div class="all-container text-center font-weight-light">
                 Your order has been initiated, Rider will be in touch with you shortly.
             </div>
+            <br>
             <article class="card">
                 <div class="card-body row">
                     <div class="col"> <strong>Shipping From:</strong> <br>{{$summary->origin}}</div>
@@ -50,7 +47,7 @@
                 <div class="sign-up-form-container text-center">
                     <form class="width-100">
                         <div class="form-submit-button">
-                            <a href="/trackorder" class="btn btn-primary font-weight-light text-uppercase">Track Progress</a>
+                            <a href="/trackorder/{{$summary->id}}" class="btn btn-primary font-weight-light text-uppercase">Track Progress</a>
                         </div>
                     </form>
                 </div>
@@ -64,9 +61,4 @@
 
         </div>
 </div>
-
-    
-
-
-
 @endsection
