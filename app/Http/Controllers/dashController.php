@@ -23,11 +23,11 @@ class dashController extends Controller
             $delivered = DB::table('customers')->count('delivered');
             $sales     = DB::table('customers')->sum('trip_cost');
             $driver    = User::whereHasRole(['driver'])->get();
-            $driver_idm = $driver[0]['id'];
+            // $driver_idm = $driver[0]['id'];
             $all_orders = count($estimate);
             return view('admin.dash')->with('estimate', $estimate)
                                      ->with('driver', $driver)
-                                     ->with('driver_idm', $driver_idm)
+                                    //  ->with('driver_idm', $driver_idm)
                                      ->with('accepted', $accepted)
                                      ->with('picked_up', $picked_up)
                                      ->with('delivered', $delivered)

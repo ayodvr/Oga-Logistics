@@ -12,6 +12,7 @@ class Driver extends Model
     Protected $fillable = [
         'name',     
         'last_name', 
+        'user_id',
         'email',   
         'phone',     
         'nin',       
@@ -19,4 +20,9 @@ class Driver extends Model
         'address',    
         'lga' 
     ];
+
+    public function user()
+    {
+        return $this->belongsTo('App\Models\User', 'user_id');
+    }
 }

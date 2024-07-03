@@ -28,6 +28,9 @@ return new class extends Migration
             $table->integer('picked_up')->nullable();
             $table->integer('declined')->nullable();
             $table->integer('delivered')->nullable();
+            $table->string('acct_name');
+            $table->string('acct_number');
+            $table->string('bank_name');
             $table->timestamps();
         });
     }

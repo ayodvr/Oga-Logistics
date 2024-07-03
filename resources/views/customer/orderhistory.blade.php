@@ -57,11 +57,10 @@
                             <span class="float-right black-price" style="color: black">${{$orders->trip_cost}}</span>
                             <span class="clearfix"></span>
                         </div>
-                        
-                        <div class="trip-fare-item">
-                            {{-- <span class="float-left">Track Order</span> --}}
-                            <br>
-                            <a href="{{route('trackorder', $orders->id)}}" class="btn btn-xs btn-dark float-right" type="submit">Track Order</a>
+                        <div>
+                            <a href="{{route('trackorder', $orders->id)}}">
+                                <button class="btn btn-xs btn-dark float-right">Track Order</button>
+                            </a>
                             <span class="clearfix"></span>
                         </div>
                     </div>

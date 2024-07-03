@@ -10,7 +10,7 @@
         <!-- begin page title -->
         <div class="d-block d-sm-flex flex-nowrap align-items-center">
             <div class="page-title mb-2 mb-sm-0">
-                <h1>Estimate</h1>
+                <h1>Account</h1>
             </div>
             <div class="ml-auto d-flex align-items-center">
                 <nav>
@@ -21,7 +21,7 @@
                         <li class="breadcrumb-item">
                             Home
                         </li>
-                        <li class="breadcrumb-item active text-primary" aria-current="page">Manage Estimate</li>
+                        <li class="breadcrumb-item active text-primary" aria-current="page">Manage Account</li>
                     </ol>
                 </nav>
             </div>
@@ -48,20 +48,20 @@
                         <thead>
                             <tr>
                                 <th>#</th>
-                                <th>Name</th>
-                                <th>Base Fare</th>
-                                <th>Rate Per KM</th>
+                                <th>Account Name</th>
+                                <th>Account Number</th>
+                                <th>Bank Name</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @forEach($estimate as $estimate)
+                            @forEach($accounts as $account)
                             <tr>
-                                <td>{{$estimate->id}}</td>
-                                <td>Estimate</td>
-                                <td>{{$estimate->baseFare}}</td>
-                                <td>{{$estimate->ratePerKm}}</td>
-                                <td> <a class="mr-3" href="{{route('customer.edit', $estimate->id)}}"><i class="fe fe-edit"></i></a>
+                                <td>{{$account->id}}</td>
+                                <td>{{$account->acct_name}}</td>
+                                <td>{{$account->acct_number}}</td>
+                                <td>{{$account->bank_name}}</td>
+                                <td> <a class="mr-3" href="/edit_account/{{$account->id}}"><i class="fe fe-edit"></i></a>
                                     {{-- <a href="javascript:void(0);"><i class="fe fe-trash-2"></i></a> --}}
                                 </td>
                             </tr>

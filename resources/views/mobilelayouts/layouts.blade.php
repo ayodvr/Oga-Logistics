@@ -21,6 +21,7 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/style.css') }}" />
     <!-- Main Style -->
     <link rel="stylesheet" href="{{asset('mobstyle/css/styles.css')}}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <style>
         #map-container {
             width: 100%;
@@ -53,6 +54,8 @@
 <div class="main-menu hidden-soft">
     @include('includes.ridenav')
 <!-- Optional JavaScript -->
+{{-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> --}}
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 <script src="{{asset('mobstyle/js/jquery-3.4.1.js')}}"></script>
 <script src="{{asset('mobstyle/js/popper.min.js')}}"></script>
 <script src="{{asset('mobstyle/js/bootstrap.min.js')}}"></script>
@@ -287,8 +290,10 @@
                         timeText += minutes.toFixed(0) + ' minutes';
 
                         // Display trip details on HTML page
-                        document.getElementById('trip-distance-init').innerHTML = '<b>Distance</b>: ' + distance.toFixed(2) + ' km';
-                        document.getElementById('trip-time-init').innerHTML = '<b>Time</b>: ' + timeText;
+                        document.getElementById('distance_text').innerHTML = 'Distance:';
+                        document.getElementById('time_text').innerHTML = 'Time:';
+                        document.getElementById('trip-distance-init').innerHTML = distance.toFixed(2) + ' km';
+                        document.getElementById('trip-time-init').innerHTML = timeText;
                         // document.getElementById('trip-cost').innerHTML = 'Trip Cost: ' + '<br>' +'$'+tripCost.toFixed(2);
 
                         // Populate hidden input fields with trip details
@@ -313,7 +318,8 @@
                             var ratePerKm = parseFloat(data.rate_per_km);
                             var tripCost = baseFare + distance * ratePerKm; 
                             //console.log(tripCost);
-                            document.getElementById('trip_cost_init').innerHTML = '<b>Trip Cost</b>: ' + '$'+tripCost.toFixed(2);
+                            document.getElementById('trip_text').innerHTML = 'Trip Cost:';
+                            document.getElementById('trip_cost_init').innerHTML = '$'+tripCost.toFixed(2);
                             document.getElementById('trip_cost').value = tripCost.toFixed(2);
                             return tripCost;
                         })

@@ -47,6 +47,11 @@
                 <div class="sign-up-form-container text-center">
                     <form class="width-100">
                         <div class="form-submit-button">
+                            <a href="{{route('declined', $summary->id)}}" class="btn btn-danger font-weight-light text-uppercase">Cancel Ride</a>
+                        </div>
+                    </form>
+                    <form class="width-100">
+                        <div class="form-submit-button">
                             <a href="/trackorder/{{$summary->id}}" class="btn btn-primary font-weight-light text-uppercase">Track Progress</a>
                         </div>
                     </form>

@@ -64,28 +64,25 @@
                           <td>{{$allocated->created_at->diffForHumans()}}</td>
                           <td>
                             <div class="py-2 border-bottom">
-                              @if($allocated->accepted == 1 || $allocated->accepted == 2 || $allocated->accepted == 3 )
-                              <button class="btn btn-xs btn-primary" disabled>Accepted</button>
-                              @else
+                              @if($allocated->accepted == null)
                               <a href="{{route('accept_order', $allocated->id)}}" class="btn btn-xs btn-primary">Accept</a>
+                              @elseif($allocated->accepted > 0)
+                              <button class="btn btn-xs btn-dark" disabled>Accepted</button>
                               @endif
-                              @if($allocated->accepted == 2 || $allocated->accepted == 3)
-                              <button class="btn btn-xs btn-info" disabled>Picked Up</button>
-                              @elseif($allocated->accepted == null)
-                              <a class="btn btn-xs btn-primary text-white" disabled>Pick Up</a>
-                              @else
+
+                              @if($allocated->picked_up == null)
                               <a href="{{route('picked_up', $allocated->id)}}" class="btn btn-xs btn-primary">Pick Up</a>
+                              @elseif($allocated->picked_up == 1)
+                              <button class="btn btn-xs btn-dark" disabled>Picked Up</button>
                               @endif
-                              @if($allocated->accepted !== 2 )
-                              <a class="btn btn-xs btn-primary text-white" disabled>Deliver</a>
-                              @elseif($allocated->accepted == 2)
-                              <button class="btn btn-xs btn-primary" data-toggle="modal" data-target="#verticalCenter">Deliver</button>
-                              {{-- <a href="{{route('delivered', $allocated->id)}}" data-toggle="modal" data-target="#verticalCenter" class="btn btn-xs btn-primary">Deliver</a> --}}
-                              @else
-                              <button class="btn btn-xs btn-success" disabled>Delivered</button>
+
+                              @if($allocated->delivered == null)
+                              <a href="{{route('delivered', $allocated->id)}}" data-name ="{{$allocated->acct_name}} {{$allocated->acct_number}} {{$allocated->bank_name}}" data-target="#verticalCenter" 
+                                class="btn btn-xs btn-primary destroy-confirm">Deliver</a> 
+                              @elseif($allocated->delivered == 1)
+                              <button class="btn btn-xs btn-dark" disabled>Delivered</button>
                               @endif
                             </div>
-                    
                           </td>
                       </tr>
                       @endforEach

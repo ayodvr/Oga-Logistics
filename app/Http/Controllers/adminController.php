@@ -7,23 +7,21 @@ use App\Models\User;
 use App\Models\Customer;
 use App\Models\Driver;
 use App\Models\Partner;
+use App\Models\Account;
 use Illuminate\Validation\Rules;
 use Illuminate\Support\Facades\Hash;
 
 class adminController extends Controller
 {
-    public function admindashboard()
+      public function admindashboard()
     {
-        
-            return view('admin.dash');
-       
+        return view('admin.dash');
     }
 
     public function managedriver()
     {
-        $drivers = Driver::all();
-        return view('admin.managedriver')->with('drivers', $drivers);
-       
+        $users = User::whereHasRole('driver')->get();
+        return view('admin.managedriver')->with('users', $users);
     }
 
     public function driverreg()
@@ -56,6 +54,7 @@ class adminController extends Controller
             if($user){
 
                 $driver = Driver::create([
+                    'user_id'=> $user->id,
                     'name' => $request->name,
                     'last_name' => $request->last_name,
                     'email' => $request->email,
@@ -73,6 +72,27 @@ class adminController extends Controller
     {
         $partners = Partner::all();
         return view('admin.managepartners')->with('partners', $partners);
+    }
+
+    public function accounts()
+    {
+        $accounts = Account::all();
+        return view('admin.account')->with('accounts', $accounts);
+    }
+
+    public function edit_account(string $id)
+    {
+        $account = Account::findorfail($id)->first();
+        return view('admin.edit_account')->with('account', $account);
+    }
+
+    public function update_account(Request $request, string $id)
+    {
+        // dd($request->all());
+        $data = $request->except(['_method','_token']);
+        $trip = Account::findorfail($id)->first();
+        $trip->update($data);
+        return back();
     }
 
     public function partnersreg()

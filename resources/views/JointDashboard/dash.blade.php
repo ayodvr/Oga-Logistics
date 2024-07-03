@@ -3,20 +3,17 @@
 @section('content')
 
 <div class="col-xs-12 col-sm-12 remaining-height">
-
-        <!--Page Title & Icons Start-->
         <div class="header-icons-container position-relative text-center">
             <span class="float-left back-to-map hidden">
                 <img src="{{asset('mobstyle/icons/back.svg')}}" alt="Back Icon">
             </span>
-            <span class="title">Add Route</span>
+            <h5 class="title">Add Route</h5>
             <a href="#">
                 <span class="float-right menu-open closed">
                     <img src="{{asset('mobstyle/icons/menu.svg')}}" alt="Menu Hamburger Icon">
                 </span>
             </a>
         </div>
-        
         <!--Page Title & Icons End-->
                <!--Google Maps Start-->
                <div id="map-container" class="h-100"></div>
@@ -33,6 +30,31 @@
                             </div>
                         </div>
                         <div class="margin-top-10 height-auto" id="origin-input-container">
+                            @if(session('success'))
+                                <div class="alert alert-info alert-dismissible fade show" style="width:100%; margin:auto" role="alert">
+                                {{session('success')}}
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                            </div>
+                        @endif
+                        <div class="trip-fare-container font-weight-light">
+                            <div class="trip-fare-item">
+                                <span class="float-left" id="trip_text"></span>
+                                <span class="float-right" id="trip_cost_init"></span>
+                                <span class="clearfix"></span>
+                            </div>
+                            <div class="trip-fare-item">
+                                <span class="float-left" id="distance_text"></span>
+                                <span class="float-right" id="trip-distance-init"></span>
+                                <span class="clearfix"></span>
+                            </div>
+                            <div class="trip-fare-item">
+                                <span class="float-left" id="time_text"></span>
+                                <span class="float-right" id="trip-time-init"></span>
+                                <span class="clearfix"></span>
+                            </div>
+                        </div>
                 {{-- <span id="current-location"></span> --}}
                 <div class="w-100 map-input-container map-input-container-top mt-3" style="border: solid 2px; border-radius: 5px; border-color: #c4c0c0; font-weight: 400">
                     <span class="map-input-icon"><img src="{{asset('mobstyle/icons/circle.svg')}}"  alt="Current Location Icon"></span>
@@ -50,37 +72,6 @@
                 <ul id="suggestion-list"></ul>  
             </div>
             {{-- <p id="distance"></p> --}}
-            <div class="payment-options">
-                <div class="default-payment-method-container display-flex">
-                    <div class="about-section display-flex">
-                        <div>
-                            <div class="trip-fare-container trip-fare-driver font-weight-light">
-                                <!--Trip Fare Item Start-->
-                                <div class="trip-fare-item">
-                                    {{-- <span class="float-left">Estimate Price</span> --}}
-                                    <span id="trip_cost_init"></span>
-                                </div>
-                                <!--Trip Fare Item End-->
-                                <div class="trip-fare-item">
-                                    {{-- <span class="float-left">Distance</span> --}}
-                                    <span id="trip-distance-init"></span>
-                                </div>
-                                <!--Trip Fare Item End-->
-                                <div class="trip-fare-item">
-                                    {{-- <span class="float-left">Time</span> --}}
-                                    <span id="trip-time-init"></span>
-                                </div>
-                                <!--Trip Fare Item End-->
-                            </div>
-                        </div>
-                    </div>
-                    {{-- <div style="display:flex">
-                        <h5 id="trip-distance"></h5>
-                        <h5 id="trip-time"></h5>
-                        <h5 id="trip-cost"></h5>
-                    </div>
-                </div> --}}
-            </div>
                 <input type="hidden" id="origin_address" name="origin">
                 <input type="hidden" id="destination_address" name="destination">
                 <input type="hidden" id="trip_distance" name="trip_distance">

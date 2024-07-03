@@ -10,7 +10,7 @@
             <!-- begin page title -->
             <div class="d-block d-sm-flex flex-nowrap align-items-center">
                 <div class="page-title mb-2 mb-sm-0">
-                    <h1>Update Estimate</h1>
+                    <h1>Update Account</h1>
                 </div>
                 <div class="ml-auto d-flex align-items-center">
                     <nav>
@@ -21,7 +21,7 @@
                             <li class="breadcrumb-item">
                                 Home
                             </li>
-                            <li class="breadcrumb-item active text-primary" aria-current="page">Estimate</li>
+                            <li class="breadcrumb-item active text-primary" aria-current="page">Account</li>
                         </ol>
                     </nav>
                 </div>
@@ -57,19 +57,25 @@
                 @endif
                 <br>
                 <div class="card-body">
-                    <form  method="post" class="form-horizontal" action="{{route('customer.update', $estimate->id)}}">
+                    <form  method="POST" class="form-horizontal" action="/update_account/{{$account->id}}">
                         @csrf
                         @method('PUT')
                         <div class="form-group">
-                            <label class="control-label" for="firstname1">Base Fare</label>
+                            <label class="control-label" for="firstname1">Account Name</label>
                             <div class="mb-2">
-                                <input type="text" class="form-control" id="bname" name="baseFare" value="{{$estimate->baseFare}}" placeholder="Enter base fare" />
+                                <input type="text" class="form-control" id="bname" name="acct_name" value="{{$account->acct_name}}" placeholder="Enter account name" />
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="control-label" for="username1">Rate Per Km</label>
+                            <label class="control-label" for="username1">Account Number</label>
                             <div class="mb-2">
-                                <input type="text" class="form-control" id="phone" name="ratePerKm" value="{{$estimate->ratePerKm}}" placeholder="Enter rate per km" />
+                                <input type="text" class="form-control" id="phone" name="acct_number" value="{{$account->acct_number}}" placeholder="Enter account number" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label" for="username1">Bank Name</label>
+                            <div class="mb-2">
+                                <input type="text" class="form-control" id="phone" name="bank_name" value="{{$account->bank_name}}" placeholder="Enter bank name" />
                             </div>
                         </div>
                         <div class="form-group">

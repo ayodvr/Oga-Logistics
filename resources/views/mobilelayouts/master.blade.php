@@ -43,5 +43,26 @@
 
     <script src="{{ asset('assets/js/vendors.js') }}"></script>
     <script src="{{ asset('assets/js/app.js') }}"></script>
+    <script src="{{asset('https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.0/sweetalert.min.js')}}"></script>
+  <script src="{{asset('https://unpkg.com/sweetalert/dist/sweetalert.min.js')}}"></script>
+  @include('sweetalert::alert')
+<script>
+    // link method for delete/trash
+    $('.destroy-confirm').on('click', function (event) {
+    var name = $(this).data("name");
+    event.preventDefault();
+    const url = $(this).attr('href');
+        swal({
+            title:  `Has payment been made into the account below ?`,
+            text: `${name}`,
+            icon: 'warning',
+            buttons: ["Cancel", "Yes...Confirm!"],
+        }).then(function(value) {
+            if (value) {
+                window.location.href = url;
+            }
+    });
+});
+</script>
 </body>
 </html>

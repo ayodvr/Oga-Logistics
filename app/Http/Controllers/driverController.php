@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Customer;
 use App\Models\User;
+use App\Models\Driver;
 use App\Models\Estimate;
 
 class driverController extends Controller
@@ -42,10 +43,30 @@ class driverController extends Controller
     }
 
     public function declined($id){
-        Customer::find($id)->update(['declined'=> 1]);
-        return back();
+        $declined = Customer::find($id);
+        $declined->delete();
+        return redirect()->route('dashboard')->with('success', 'Ride Cancelled');
     }
 
+    public function driver_info($id){
+        $driver = Customer::where('driver_id', $id)->get();
+        //dd($driver);
+        return view('driver.statement')->with('drivers', $driver);
+    }
+
+        public function driver_kill($id)
+       {
+           $user = User::find($id);
+
+           $deleted = $user->delete();
+
+           if($deleted){
+
+            Driver::where('user_id', $user->id)->delete();
+
+                return back();
+           }
+       }
 
 
     public function statement()

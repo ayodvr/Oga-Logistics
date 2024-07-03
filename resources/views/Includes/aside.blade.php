@@ -21,7 +21,7 @@
             <li><a class="has-arrow" href="javascript:void(0)" aria-expanded="false"><i class="fa fa-money"></i><span class="nav-title">Estimate</span></a>
                 <ul aria-expanded="false">
                     <li> <a href='{{route('customer.index')}}'>Manage Estimates</a> </li>
-                    {{-- <li> <a href='{{route('customer.edit', auth()->user()->id)}}'>Manage Estimates</a> </li> --}}
+                    <li> <a href='/account'>Account Number</a> </li>
                 </ul>
             </li>
             

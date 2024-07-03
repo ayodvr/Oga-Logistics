@@ -56,15 +56,16 @@
                                                     </tr>
                                                 </thead>
                                                 <tbody>
-                                                    @foreach($drivers as $driver)
+                                                    @foreach($users as $user)
                                                     <tr>
-                                                        <td>{{$driver->id}}</td>
-                                                        <td>{{$driver->name}}</td>
-                                                        <td>{{$driver->last_name}}</td>
-                                                        <td>{{$driver->email}}</td>
-                                                        <td>{{$driver->phone}}</td>
-                                                        <td> <a class="mr-3" href="javascript:void(0);"><i class="fe fe-edit"></i></a>
-                                                            <a href="javascript:void(0);"><i class="fe fe-trash-2"></i></a>
+                                                        <td>{{$user->id}}</td>
+                                                        <td>{{$user->name}}</td>
+                                                        <td>{{$user->last_name}}</td>
+                                                        <td>{{$user->email}}</td>
+                                                        <td>{{$user->phone}}</td>
+                                                        <td> 
+                                                            <a class="mr-3" href="{{route('driver_info', $user->id)}}"><i class="fe fe-eye"></i></a>
+                                                            <a href="{{route('driver_kill', $user->id)}}" onclick="return confirm_delete()"><i class="fe fe-trash-2"></i></a>
                                                         </td>
                                                     </tr>
                                                     @endforeach
@@ -85,9 +86,11 @@
                                 </div>
                             </div>
                         </div>
-
                     </div>
                     <!-- end container-fluid -->
-
-
+        <script type="text/javascript">
+            function confirm_delete() {
+                return confirm('Are you sure you want to delete driver?');
+            }
+        </script>
 @endsection

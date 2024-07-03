@@ -49,9 +49,9 @@ class User extends Authenticatable implements LaratrustUser
         ];
     }
 
-    // public function customers(): BelongsTo
-    // {
-    //     return $this->belongsTo(Customer::class);
-    // }
+    public function drivers()
+    {
+        return $this->hasMany('App\Models\Driver', 'user_id');
+    }
 
 }

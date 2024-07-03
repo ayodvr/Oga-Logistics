@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Customer;
 use App\Models\User;
 use App\Models\Estimate;
+use App\Models\Account;
 use GuzzleHttp\Client;
 use Auth;
 
@@ -47,19 +48,8 @@ class CustomerController extends Controller
         $randomNumber = random_int(1000000000, 9999999999);
         $orderNumber = random_int(1000000, 9999999);
 
-        // $data = [
-        //     'origin'          => $request->origin,
-        //     'destination'     => $request->destination,
-        //     'trip_distance'   => $request->trip_distance,
-        //     'trip_time'       => $request->trip_time,
-        //     'trip_cost'       => $request->trip_cost,
-        //     'user_id'         => $request->user_id,
-        //     'hashed'          => $string,
-        //     'tracking'        => "OG"."-".$randomNumber,
-        //     'order_id'        => "OD"."-".$orderNumber,
-        //     'driver_id'       => 0
-        // ];
-
+        $account = Account::all();
+     
         $order                 = new Customer;
         $order->origin         = $request->origin;
         $order->destination    = $request->destination;
@@ -70,11 +60,9 @@ class CustomerController extends Controller
         $order->hashed         = $string;
         $order->tracking       = "OG"."-".$randomNumber;
         $order->order_id       = "OD"."-".$orderNumber;
-        // $order->driver_id      = nullable;
-        // $order->assigned       = nullable;
-        // $order->accepted       = nullable;
-        // $order->picked_up      = nullable;
-        // $order->delivered      = nullable;
+        $order->acct_name      = $account[0]['acct_name'];
+        $order->acct_number    = $account[0]['acct_number'];
+        $order->bank_name      = $account[0]['bank_name'];
 
         $order->save();
 

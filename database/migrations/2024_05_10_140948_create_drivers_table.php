@@ -15,12 +15,15 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('last_name');
+            $table->unsignedBigInteger('user_id');
             $table->string('email')->unique();
             $table->string('phone');
             $table->string('nin');
             $table->string('state');
             $table->string('lga');
             $table->timestamps();
+
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
 

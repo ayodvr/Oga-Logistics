@@ -25,7 +25,10 @@ class Customer extends Model
         'accepted',
         'picked_up',    
         'delivered',
-        'declined' 
+        'declined',
+        'acct_name',
+        'acct_number', 
+        'bank_name',
     ];
 
         // public function users(): HasMany
