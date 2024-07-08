@@ -97,6 +97,21 @@ class CustomerController extends Controller
         
     }
 
+    public function verifyUser(Request $request){
+        $token = User::where('code', $request->code)->update(['verify_user'=> 1]);
+
+        if($token){
+                \Mail::send('emails.ewelcome', array(), function($message)
+            {
+                $email = 'martinjasmine42@gmail.com';
+                $message->from('martinjasmine42@gmail.com', "New Message From Oga Logistics!");
+                $message->to('martinjasmine42@gmail.com');
+                $message->subject('Welcome to Oga Logistics!');
+            });
+        }
+        return redirect()->route('login')->with('success','Your account has been verified, you can now login.');
+    } 
+
     /**
      * Remove the specified resource from storage.
      */

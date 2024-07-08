@@ -28,12 +28,19 @@
                     <div class="logo">
                             <img class="logo-size" style="width: 280px;height: auto;margin-bottom: 100px;" src="{{asset('log/images/log2.png')}}" alt="">
                         </div>
+                        <div class="text-center">
+                            @if(session('success'))
+                            <div class="alert alert-success" style="width:92%; margin:auto">
+                            {{session('success')}}</div>
+                            @endif
+                        </div>
+                        <br>
                         <h3>Password Reset</h3>
                         <p>To reset your password, enter the email address you use to sign in to iofrm</p>
                         <!-- Session Status -->
                         <x-auth-session-status class="mb-4" :status="session('status')" />
-                        <form method="POST" action="{{ route('password.email') }}">
-                        @csrf
+                        <form method="POST" action="{{ route('forget.password.post') }}">
+                            @csrf
                             <input class="form-control"  placeholder="E-mail Address" type="email" name="email" :value="old('email')" required autofocus />
                             <x-input-error :messages="$errors->get('email')" class="mt-2" />
                             <div class="form-button full-width">

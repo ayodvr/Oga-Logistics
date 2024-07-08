@@ -18,7 +18,8 @@ class UserSeeder extends Seeder
             'last_name' => 'Musonga',
             'email'=>    'admin@test.com',
             'phone'=>    '09037949021',
-            // 'verified'=> 1,
+            'verify_user'=> 1,
+            'code'=> random_int(100000, 999999),
             'email_verified_at' => now(),
             'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
             'remember_token' => \Illuminate\Support\Str::random(10),
@@ -30,7 +31,8 @@ class UserSeeder extends Seeder
             'last_name' => 'Anunnaki',
             'email'=>    'customer@test.com',
             'phone'=>    '09037949021',
-            // 'verified'=> 1,
+            'verify_user'=> 1,
+            'code'=> random_int(100000, 999999),
             'email_verified_at' => now(),
             'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
             'remember_token' => \Illuminate\Support\Str::random(10),
@@ -42,7 +44,8 @@ class UserSeeder extends Seeder
             'last_name' => 'Anunnaki',
             'email'=>    'driver@test.com',
             'phone'=>    '09037949021',
-            // 'verified'=> 1,
+            'verify_user'=> 1,
+            'code'=> random_int(100000, 999999),
             'email_verified_at' => now(),
             'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
             'remember_token' => \Illuminate\Support\Str::random(10),
@@ -54,7 +57,8 @@ class UserSeeder extends Seeder
             'last_name' => 'Ajibade',
             'email'=>    'khalifa@test.com',
             'phone'=>    '09037949021',
-            // 'verified'=> 1,
+            'verify_user'=> 1,
+            'code'=> random_int(100000, 999999),
             'email_verified_at' => now(),
             'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
             'remember_token' => \Illuminate\Support\Str::random(10),
@@ -66,7 +70,8 @@ class UserSeeder extends Seeder
             'last_name' => 'Orion',
             'email'=>    'partner@test.com',
             'phone'=>    '09037949021',
-            // 'verified'=> 1,
+            'verify_user'=> 1,
+            'code'=> random_int(100000, 999999),
             'email_verified_at' => now(),
             'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
             'remember_token' => \Illuminate\Support\Str::random(10),

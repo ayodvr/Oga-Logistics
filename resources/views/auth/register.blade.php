@@ -29,6 +29,22 @@
                         </div>
                         <h3>Welcome aboard!.</h3>
                         <p>Ready to streamline your shipments with ease?.</p>
+                        {{-- @if(count($errors) > 0)
+                            @foreach($errors->all() as $error)
+                            <div class="alert alert-danger" style="width:100%; margin:auto">
+                                {{$error}}</div>
+                            @endforeach
+                            @endif
+                            @if(session('success'))
+                            <div class="alert alert-success" style="width:100%; margin:auto">
+                            {{session('success')}}</div>
+                            @endif
+
+                            @if(session('error'))
+                            <div class="alert alert-danger" style="width:100%; margin:auto">
+                            {{session('error')}}</div>
+                            @endif
+                            <br> --}}
                         <div class="page-links">
                             <a href="/login">Login</a><a href="/register" class="active">Register</a>
                         </div>

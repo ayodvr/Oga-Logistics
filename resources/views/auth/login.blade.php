@@ -32,6 +32,22 @@
                         </div>
                         <h3>Welcome to OGAGLOBAL LOGISTICS</h3>
                         <p>Your gateway to effortless shipping and tracking.</p>
+                        @if(count($errors) > 0)
+                            @foreach($errors->all() as $error)
+                            <div class="alert alert-danger" style="width:100%; margin:auto">
+                                {{$error}}</div>
+                            @endforeach
+                            @endif
+                            @if(session('success'))
+                            <div class="alert alert-success" style="width:100%; margin:auto">
+                            {{session('success')}}</div>
+                            @endif
+
+                            @if(session('error'))
+                            <div class="alert alert-danger" style="width:100%; margin:auto">
+                            {{session('error')}}</div>
+                            @endif
+                            <br>
                         <div class="page-links">
                             <a href="login4.html" class="active">Login</a><a href="/register">Register</a>
                         </div>
@@ -48,7 +64,12 @@
                             </div>
                             <div class="form-button">
                                 <button id="submit" type="{{ __('login') }}" class="ibtn" >Login</button> 
-                                <a href="/forgot-password">Forget password?</a>
+                                @if(Route::has('password.request'))
+                                <a
+                                    href="{{ route('password.request') }}"
+                                    >Forgot password?</a
+                                >
+                                @endif
                             </div>
                         </form>
                        

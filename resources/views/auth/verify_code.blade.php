@@ -23,17 +23,15 @@
                                 </div>
                             </a>
                         </div>
-                        <h3>Forgot Password</h3>
-                        <p>{{ __('This is a secure area of the application. Please confirm your password before continuing.') }}</p>
-                        
-                        <form method="POST" action="{{ route('password.confirm') }}">
+                        <h3>Activate Account</h3>
+                        <p><span style="color: greenyellow">Enter the verification sent to your email</span></p>
+                        <form method="POST" action="{{route('verify_user')}}">
                             @csrf
-                            <input class="form-control" type="password" name="password" placeholder="password" required>
+                            <input class="form-control" type="text" name="code" placeholder="E-mail Verification Code">
                             <div class="form-button">
-                                <button id="submit" type="{{ __('Confirm') }}" class="ibtn">Confirm</button>
+                                <input type="submit" value="Activate" class="ibtn text-center">
                             </div>
                         </form>
-                        
                     </div>
                 </div>
             </div>
@@ -44,5 +42,4 @@
 <script src="log/js/bootstrap.min.js"></script>
 <script src="js/main.js"></script>
 </body>
-
 </html>

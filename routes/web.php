@@ -11,6 +11,16 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('forget-password', 'App\Http\Controllers\ForgotPasswordController@showForgetPasswordForm')->name('forget.password.get');
+Route::post('forget-password', 'App\Http\Controllers\ForgotPasswordController@submitForgetPasswordForm')->name('forget.password.post');
+
+Route::get('user-reset-password/{token}', 'App\Http\Controllers\ForgotPasswordController@showResetPasswordForm')->name('resetpasswordget');
+Route::post('user-reset-password', 'App\Http\Controllers\ForgotPasswordController@submitResetPasswordForm')->name('reset.password.post');
+
+Route::get('user-verify-code', 'App\Http\Controllers\ForgotPasswordController@showResetVerifyForm')->name('verify.password.get');
+
+Route::post('/verify_user', "App\Http\Controllers\CustomerController@verifyUser")->name('verify_user');
+
 Route::get('/dashboard', "App\Http\Controllers\dashcontroller@dashboard")->middleware(['auth', 'verified'])->name('dashboard');
 Route::get('/profile', "App\Http\Controllers\dashcontroller@profile")->middleware(['auth', 'verified'])->name('profile');
 Route::get('/history', "App\Http\Controllers\dashcontroller@history")->middleware(['auth', 'verified'])->name('history');

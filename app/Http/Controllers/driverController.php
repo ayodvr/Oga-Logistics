@@ -26,25 +26,68 @@ class driverController extends Controller
     }
 
     public function acceptOrder($id){
-        Customer::find($id)->update(['accepted'=> 1]);
+        $accept = Customer::find($id)->update(['accepted'=> 1]);
+
+        if($accept){
+            \Mail::send('emails.ewelcome', array(), function($message)
+        {
+            $email = 'martinjasmine42@gmail.com';
+            $message->from('martinjasmine42@gmail.com', "New Message From Oga Logistics!");
+            $message->to('martinjasmine42@gmail.com');
+            $message->subject('Welcome to Oga Logistics!');
+        });
+    }
+
         return back();
     }
 
     public function pickedUp($id){
-        Customer::find($id)->update(['accepted'=> 2]);
-        Customer::find($id)->update(['picked_up'=> 1]);
+       $picked_1 =  Customer::find($id)->update(['accepted'=> 2]);
+       $picked_2 =  Customer::find($id)->update(['picked_up'=> 1]);
+
+        if($picked_1 && $picked_2){
+            \Mail::send('emails.ewelcome', array(), function($message)
+        {
+            $email = 'martinjasmine42@gmail.com';
+            $message->from('martinjasmine42@gmail.com', "New Message From Oga Logistics!");
+            $message->to('martinjasmine42@gmail.com');
+            $message->subject('Welcome to Oga Logistics!');
+        });
+    }
+
         return back();
     }
 
     public function delivered($id){
-        Customer::find($id)->update(['accepted'=> 3]);
-        Customer::find($id)->update(['delivered'=> 1]);
+        $delivered_1 = Customer::find($id)->update(['accepted'=> 3]);
+        $delivered_2 = Customer::find($id)->update(['delivered'=> 1]);
+
+        if($delivered_1 && $delivered_2){
+            \Mail::send('emails.ewelcome', array(), function($message)
+        {
+            $email = 'martinjasmine42@gmail.com';
+            $message->from('martinjasmine42@gmail.com', "New Message From Oga Logistics!");
+            $message->to('martinjasmine42@gmail.com');
+            $message->subject('Welcome to Oga Logistics!');
+        });
+    }
+
         return back();
     }
 
     public function declined($id){
         $declined = Customer::find($id);
         $declined->delete();
+
+        if($declined){
+            \Mail::send('emails.ewelcome', array(), function($message)
+        {
+            $email = 'martinjasmine42@gmail.com';
+            $message->from('martinjasmine42@gmail.com', "New Message From Oga Logistics!");
+            $message->to('martinjasmine42@gmail.com');
+            $message->subject('Welcome to Oga Logistics!');
+        });
+    }
         return redirect()->route('dashboard')->with('success', 'Ride Cancelled');
     }
 
