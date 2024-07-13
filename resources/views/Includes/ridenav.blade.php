@@ -14,7 +14,9 @@
             <div class="profile-email text-center">{{ Auth::user()->email }}</div>
         </div>
     </div>
+    
     <div class="menu-items">
+    
         <div class="all-menu-items">
             <a class="menu-item" href="/dashboard">
                 <div>
@@ -48,21 +50,19 @@
                 <span class="menu-item-title">Order History</span>
                 <span class="menu-item-click fas fa-arrow-right"></span>
             </a>
-            <a class="menu-item" href="history.html">
+            <a class="menu-item" href="/support">
                 <span class="menu-item-icon menu-dark support">
                     <img src="{{asset('mobstyle/icons/support.svg')}}" alt="Support Icon">
                 </span>
                 <span class="menu-item-icon menu-light support">
                     <img src="{{asset('mobstyle/icons/support-light.svg')}}" alt="Support Lighter Icon">
                 </span>
-                <span class="menu-item-title">Contact Us</span>
+                <span class="menu-item-title">Online Support</span>
                 <span class="menu-item-click fas fa-arrow-right"></span>
             </a>
            
-            <form method="POST" action="{{ route('logout') }}">
-                        @csrf
-            <a href="route('logout')" class="menu-item margin-top-auto" onclick="event.preventDefault();
-                                            this.closest('form').submit();">
+            
+            <a href="/logout" class="menu-item margin-top-auto" >
             
                 <span class="menu-item-icon menu-dark logout">
                     <img src="{{asset('mobstyle/icons/logout.svg')}}" alt="Logout Icon">
@@ -71,11 +71,14 @@
                     <img src="{{asset('mobstyle/icons/logout-light.svg')}}" alt="Logout Icon">
                 </span>
                 <span class="menu-item-title logout">Log out</span>
-            </form>
+            
                 <span class="menu-item-click fas fa-arrow-right"></span>
             </a>
+        
         </div>
+    
     </div>
+    </form>
     <div class="modal fade" id="searchingModal" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content search">
@@ -248,14 +251,11 @@
                 <span class="menu-item-icon menu-light support">
                     <img src="{{asset('mobstyle/icons/support-light.svg')}}" alt="Support Lighter Icon">
                 </span>
-                <span class="menu-item-title">Contact Us</span>
+                <span class="menu-item-title">Online Support</span>
                 <span class="menu-item-click fas fa-arrow-right"></span>
             </a>
            
-            <form method="POST" action="{{ route('logout') }}">
-                        @csrf
-            <a href="route('logout')" class="menu-item margin-top-auto" onclick="event.preventDefault();
-                                            this.closest('form').submit();">
+            <a href="/logout" class="menu-item margin-top-auto" >
             
                 <span class="menu-item-icon menu-dark logout">
                     <img src="{{asset('mobstyle/icons/logout.svg')}}" alt="Logout Icon">
@@ -264,7 +264,7 @@
                     <img src="{{asset('mobstyle/icons/logout-light.svg')}}" alt="Logout Icon">
                 </span>
                 <span class="menu-item-title logout">Log out</span>
-            </form>
+        
                 <span class="menu-item-click fas fa-arrow-right"></span>
             </a>
         </div>

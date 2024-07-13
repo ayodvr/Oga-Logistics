@@ -42,7 +42,7 @@ class ForgotPasswordController extends Controller
             ]);
 
           Mail::send('emails.forgetPassword', ['token' => $token], function($message) use($request){
-              $message->from('info@nairacoinxchange.net', "Oga Logistics");
+              $message->from('ihlwub508355388@gmail.com', "Oga Logistics");
               $message->to($request->email);
               $message->subject('Reset Password');
           });

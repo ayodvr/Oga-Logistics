@@ -214,8 +214,8 @@ class adminController extends Controller
 
     public function orderallocation()
     {
-        $estimate = Customer::all();
-        $driver = User::whereHasRole(['driver'])->get();
+        $estimate = Customer::orderBy('id', 'desc')->latest();
+        $driver = User::orderBy('created_at', 'desc')->whereHasRole(['driver'])->get();
         $driver_idm = $driver[0]['id'];
         return view('admin.orderallocation')->with('estimate', $estimate)
                                             ->with('driver', $driver)

@@ -22,7 +22,7 @@
                 </div>
             </div>
             
-            <div class="form-holder" style="background-image:url({{asset('log/images/19241.jpg);')}}">
+            <div class="form-holder" >
                 
                 <div class="form-content">
                     

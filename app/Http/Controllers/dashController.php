@@ -17,12 +17,12 @@ class dashController extends Controller
     {
         if(auth()->User()->hasRole('admin'))
         {
-            $estimate  = Customer::all();
+            $estimate  = Customer::orderBy('created_at', 'desc')->get();
             $accepted  = DB::table('customers')->count('accepted');
             $picked_up = DB::table('customers')->count('picked_up');
             $delivered = DB::table('customers')->count('delivered');
             $sales     = DB::table('customers')->sum('trip_cost');
-            $driver    = User::whereHasRole(['driver'])->get();
+            $driver    = User::orderBy('created_at', 'desc')->whereHasRole(['driver'])->get();
             // $driver_idm = $driver[0]['id'];
             $all_orders = count($estimate);
             return view('admin.dash')->with('estimate', $estimate)
@@ -73,6 +73,26 @@ class dashController extends Controller
         $user = auth()->user()->id;
         $orders = Customer::where('user_id', $user)->get();
         return view('customer.orderhistory')->with('orders', $orders);
+    }
+
+    public function arrivalproblem()
+    {
+        return view('customer.arrivalproblem');
+    }
+
+    public function payproblem()
+    {
+        return view('customer.payproblem');
+    }
+
+    public function driverproblem()
+    {
+        return view('customer.driverproblem');
+    }
+
+    public function support()
+    {
+        return view('customer.support');
     }
 
 }

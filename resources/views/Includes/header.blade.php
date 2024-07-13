@@ -146,11 +146,9 @@
                                             <h4 class="text-white mb-0">Alice Williams</h4>
                                             <small class="text-white">Henry@example.com</small>
                                         </div>
-                                        <form method="POST" action="{{ route('logout') }}">
-                                            @csrf
-                                        <a href="route('logout')" class="text-white font-20 tooltip-wrapper" data-toggle="tooltip" 
-                                        data-placement="top" title="" data-original-title="Logout" onclick="event.preventDefault();
-                                        this.closest('form').submit();"> <i class="zmdi zmdi-power"></i></a>
+                                       
+                                        <a href="/logout" class="text-white font-20 tooltip-wrapper" data-toggle="tooltip" 
+                                        data-placement="top" title="" data-original-title="Logout" > <i class="zmdi zmdi-power"></i></a>
                                     </form>
                                     </div>
                                 </div>

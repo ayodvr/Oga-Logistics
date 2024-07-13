@@ -19,7 +19,7 @@ class driverController extends Controller
 
     public function task()
     {
-        $allocated = Customer::where('driver_id', auth()->user()->id)->get();
+        $allocated = Customer::orderBy('created_at', 'desc')->where('driver_id', auth()->user()->id)->get();
         //dd($allocated);
         return view('driver.task')->with('allocated', $allocated);
        
@@ -27,14 +27,13 @@ class driverController extends Controller
 
     public function acceptOrder($id){
         $accept = Customer::find($id)->update(['accepted'=> 1]);
-
         if($accept){
-            \Mail::send('emails.ewelcome', array(), function($message)
+            \Mail::send('emails.orderaccepted', array(), function($message)
         {
             $email = 'martinjasmine42@gmail.com';
-            $message->from('martinjasmine42@gmail.com', "New Message From Oga Logistics!");
+            $message->from('martinjasmine42@gmail.com', "Ogaglobal Logistics");
             $message->to('martinjasmine42@gmail.com');
-            $message->subject('Welcome to Oga Logistics!');
+            $message->subject('We Received Your Order Request');
         });
     }
 
@@ -46,12 +45,12 @@ class driverController extends Controller
        $picked_2 =  Customer::find($id)->update(['picked_up'=> 1]);
 
         if($picked_1 && $picked_2){
-            \Mail::send('emails.ewelcome', array(), function($message)
+            \Mail::send('emails.orderpickedup', array(), function($message)
         {
             $email = 'martinjasmine42@gmail.com';
-            $message->from('martinjasmine42@gmail.com', "New Message From Oga Logistics!");
+            $message->from('martinjasmine42@gmail.com', "Ogaglobal Logistics");
             $message->to('martinjasmine42@gmail.com');
-            $message->subject('Welcome to Oga Logistics!');
+            $message->subject('Your Order Has Been Picked!');
         });
     }
 
@@ -63,12 +62,12 @@ class driverController extends Controller
         $delivered_2 = Customer::find($id)->update(['delivered'=> 1]);
 
         if($delivered_1 && $delivered_2){
-            \Mail::send('emails.ewelcome', array(), function($message)
+            \Mail::send('emails.orderdelivered', array(), function($message)
         {
             $email = 'martinjasmine42@gmail.com';
-            $message->from('martinjasmine42@gmail.com', "New Message From Oga Logistics!");
+            $message->from('martinjasmine42@gmail.com', "Ogaglobal Logistics");
             $message->to('martinjasmine42@gmail.com');
-            $message->subject('Welcome to Oga Logistics!');
+            $message->subject('Your Order Has Been Delivered');
         });
     }
 
@@ -80,12 +79,12 @@ class driverController extends Controller
         $declined->delete();
 
         if($declined){
-            \Mail::send('emails.ewelcome', array(), function($message)
+            \Mail::send('emails.ordercancelled', array(), function($message)
         {
             $email = 'martinjasmine42@gmail.com';
-            $message->from('martinjasmine42@gmail.com', "New Message From Oga Logistics!");
+            $message->from('martinjasmine42@gmail.com', "Ogaglobal Logistics");
             $message->to('martinjasmine42@gmail.com');
-            $message->subject('Welcome to Oga Logistics!');
+            $message->subject('Your Order Has Been Cancelled');
         });
     }
         return redirect()->route('dashboard')->with('success', 'Ride Cancelled');

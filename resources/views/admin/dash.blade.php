@@ -77,6 +77,7 @@
                                         >
                                           <thead>
                                             <tr>
+                                                <th >Id</th>
                                                 <th >Order Id</th>
                                                 <th >From</th>
                                                 <th >To</th>
@@ -90,12 +91,13 @@
                                             @if($estimate)
                                             @forEach($estimate as $estimates)
                                               <tr>
+                                                  <td>{{$estimates->id}}</td>
                                                   <td>{{$estimates->order_id}}</td>
                                                   <td class="mt-2">{{$estimates->origin}}</td> 
                                                   <td>{{$estimates->destination}}</td>
                                                   <td>{{$estimates->trip_cost}}</td>
                                                   <td>{{$estimates->trip_time}}</td>
-                                                  <td>{{$estimates->created_at->diffForHumans()}}</td>
+                                                  <td>{{$estimates['created_at']->toFormattedDateString()}}</td>
                                                 <td>
                                                   @if($estimates->accepted == 1)
                                                   <button class="btn btn-xs btn-dark" disabled>Assigned</button>
