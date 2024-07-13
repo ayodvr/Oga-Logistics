@@ -340,35 +340,98 @@ ul.social li{
 	      </tr><!-- end tr -->
 	      
 				<tr>
-          <td valign="middle" class="hero bg_white" style="padding: 2em 0 4em 0;">
+          <td valign="middle" class="hero bg_white" style="padding:;">
             <table>
             	<tr>
             		<td>
-            			<div class="text" style="padding: 0 2.5em; text-align: center;">
-            				<h2>Reset Password</h2>
-            				<h3>You can reset password from the link below</h3>
-                    <h3 style="margin: 0px;
-                                              padding: 0px; font-size:
-                                              16px; line-height: 21px;
-                                              font-weight: 600; color:
-                                              rgb(22, 22, 22);"></h3>
-                                            <h2 style="margin: 0px;
-                                              padding: 4px 0px 0px;
-                                              display: block; font-size:
-                                              28px; line-height: 36px;
-                                              font-weight: 800; color:
-                                              rgb(250, 12, 88);"><span
-                                                style="color: #f78f33;"><a href="{{ url('user-reset-password',$token) }}" style="color: #f78f33;">Reset Password</a></span></h2>
-            				
+            			<div class="text" style="padding: 0 2.5em;color: black; ">
+            				<p>Dear {{auth()->user()->name}},</p>
+                    <p>Thank you for using Ogaglobal Logistics as your delivery partner! Your order was successfully delivered.</p>
+                     
             			</div>
             		</td>
             	</tr>
+              
             </table>
+            
           </td>
+          
+	      </tr><!-- end tr -->
+        <tr>
+          <td valign="middle" class="hero bg_white" style="margin-top: 150px;color: black;">
+            <table>
+            	<tr>
+                <td style="margin: 0px; width: 197.891px;">Order Number:</td>
+                <td style="margin: 0px; width: 197.891px;">
+                <p>517618</p>
+                </td>
+                </tr>
+                <tr>
+                <td style="margin: 0px; width: 197.891px;">Picked from:</td>
+                <td style="margin: 0px; width: 197.891px;">
+                <p>76 Jibowu Street, Ifako-Ijaiye, Ojokoro Lagos Nigeria
+                101232</p>
+                </td>
+                </tr>
+                <tr>
+                <td style="margin: 0px; width: 197.891px;">Successfully
+                Delivered at:</td>
+                <td style="margin: 0px; width: 197.891px;">
+                <p>76 Jibowu Street, Ifako-Ijaiye, Ojokoro Lagos Nigeria
+                101232</p>
+                </td>
+                </tr>
+                <tr>
+                <td style="margin: 0px; width: 197.891px;">&nbsp;</td>
+                <td style="margin: 0px; width: 197.891px;">&nbsp;</td>
+                </tr>
+                <tr>
+                  <td style="margin: 0px; width: 197.891px;">Delivery
+                  Chargers:</td>
+                  <td style="margin: 0px; width: 197.891px;">4802.65</td>
+                  </tr>
+                  <tr>
+                  <td style="margin: 0px; width: 197.891px;">Discount:</td>
+                  <td style="margin: 0px; width: 197.891px;">0</td>
+                  </tr>
+                  <tr>
+                  <td style="margin: 0px; width: 197.891px;">Insurance
+                  Amount:</td>
+                  <td style="margin: 0px; width: 197.891px;">0</td>
+                  </tr>
+                  <tr>
+                  <td style="margin: 0px; width: 197.891px;"><strong>Total
+                  Charges:</strong></td>
+                  <td style="margin: 0px; width: 197.891px;"><strong>4900</strong></td>
+                  </tr>
+              
+            </table>
+            
+          </td>
+        
+	      </tr><!-- end tr -->
+        <tr>
+          <td valign="middle" class="hero bg_white" style="padding:;">
+            <table>
+            	<tr>
+            		<td>
+            			<div class="text" style="padding: 0 2.5em;color: black;text-align: center; ">
+            				<p>Thank you,<br>
+                    Ogaglobal Logistics Team</p>
+            
+            			</div>
+            		</td>
+            	</tr>
+              
+            </table>
+            
+          </td>
+          
 	      </tr><!-- end tr -->
       <!-- 1 Column Text + Button : END -->
+       
       </table>
-      <br>
+      
       <br>
       <table align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="margin: auto;">
       	
@@ -403,5 +466,7 @@ ul.social li{
 
     </div>
   </center>
+
+  
 </body>
 </html>

@@ -103,9 +103,9 @@ class CustomerController extends Controller
         if($token){
                 \Mail::send('emails.ewelcome', array(), function($message)
             {
-                $email = 'martinjasmine42@gmail.com';
-                $message->from('martinjasmine42@gmail.com', "New Message From Oga Global Logistics!");
-                $message->to('martinjasmine42@gmail.com');
+                $email = 'ihlwub508355388@gmail.com';
+                $message->from('ihlwub508355388@gmail.com', "New Message From Oga Global Logistics!");
+                $message->to('ihlwub508355388@gmail.com');
                 $message->subject('Welcome to Oga Global Logistics!');
             });
         }

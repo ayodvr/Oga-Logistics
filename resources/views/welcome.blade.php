@@ -1,6 +1,6 @@
 <html lang="en"><head>
     <meta charset="utf-8">
-    <title>Ogalogistics - Nigeria's No.1 Logistics Company</title>
+    <title>Ogaglobal Logistics - Nigeria's No.1 B2B Delivery Service</title>
     <base href="/">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" type="image/x-icon" href="favicon.ico">

@@ -6,10 +6,15 @@ use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\EstimateController;
 use App\Http\Controllers\adminController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\Auth\AuthenticatedSessionController;
+
+
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('auth.login');
 });
+
 
 Route::get('forget-password', 'App\Http\Controllers\ForgotPasswordController@showForgetPasswordForm')->name('forget.password.get');
 Route::post('forget-password', 'App\Http\Controllers\ForgotPasswordController@submitForgetPasswordForm')->name('forget.password.post');
@@ -38,6 +43,10 @@ Route::put('/update_account/{id}', 'App\Http\Controllers\adminController@update_
 Route::post('/allocated/{order}/{id}', 'App\Http\Controllers\adminController@allocatedRide');
 Route::get('/trackorder/{id}', "App\Http\Controllers\dashcontroller@trackorder")->name('trackorder');
 Route::get('/orderhistory', "App\Http\Controllers\dashcontroller@orderhistory")->name('orderhistory');
+Route::get('/support', "App\Http\Controllers\dashcontroller@support")->name('support');
+Route::get('/arrivalproblem', "App\Http\Controllers\dashcontroller@arrivalproblem")->name('arrivalproblem');
+Route::get('/payproblem', "App\Http\Controllers\dashcontroller@payproblem")->name('payproblem');
+Route::get('/driverproblem', "App\Http\Controllers\dashcontroller@driverproblem")->name('driverproblem');
 Route::get('/admindashboard', "App\Http\Controllers\admincontroller@admindashboard")->name('admindashboard');
 Route::get('/managedriver', "App\Http\Controllers\admincontroller@managedriver")->name('managedriver');
 Route::get('/driverreg', "App\Http\Controllers\admincontroller@driverreg")->name('driverreg');

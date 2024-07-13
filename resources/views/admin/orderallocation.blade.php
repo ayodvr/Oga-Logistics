@@ -49,7 +49,7 @@
                                               <th >From</th>
                                               <th >To</th>
                                               <th >Trip Cost</th>
-                                              <th >Date</th>
+                                              
                                               <th >Driver</th>
                                               <th >Action</th>
                                               <th >Status</th>
@@ -63,7 +63,7 @@
                                                 <td class="mt-2">{{$estimates->origin}}</td> 
                                                 <td>{{$estimates->destination}}</td>
                                                 <td>{{$estimates->trip_cost}}</td>
-                                                <td>{{$estimates->created_at->diffForHumans()}}</td>
+                                                
                                                 @if($estimates->driver_id != 0)
                                                 <td>{{$estimates->assigned}}</td>
                                                 @else

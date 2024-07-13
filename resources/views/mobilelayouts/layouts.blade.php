@@ -40,7 +40,7 @@
 
     {{-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBDaQPj0xbAmGhWNlCD55gK8U-aHZlswlU&libraries=places"></script> --}}
 
-    <title>SIDE MENU</title>
+    <title>Ogaglobal Logistics - Add Route</title>
 </head>
 <body>
 <!--Loading Container Start-->

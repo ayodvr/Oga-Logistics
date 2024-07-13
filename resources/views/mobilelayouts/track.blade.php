@@ -40,7 +40,7 @@
 
     {{-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBDaQPj0xbAmGhWNlCD55gK8U-aHZlswlU&libraries=places"></script> --}}
 
-    <title>Track Order</title>
+    <title>Ogaglobal Logistics - Track Order</title>
 </head>
 <body>
 <!--Loading Container Start-->

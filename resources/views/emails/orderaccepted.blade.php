@@ -344,22 +344,13 @@ ul.social li{
             <table>
             	<tr>
             		<td>
-            			<div class="text" style="padding: 0 2.5em; text-align: center;">
-            				<h2>Reset Password</h2>
-            				<h3>You can reset password from the link below</h3>
-                    <h3 style="margin: 0px;
-                                              padding: 0px; font-size:
-                                              16px; line-height: 21px;
-                                              font-weight: 600; color:
-                                              rgb(22, 22, 22);"></h3>
-                                            <h2 style="margin: 0px;
-                                              padding: 4px 0px 0px;
-                                              display: block; font-size:
-                                              28px; line-height: 36px;
-                                              font-weight: 800; color:
-                                              rgb(250, 12, 88);"><span
-                                                style="color: #f78f33;"><a href="{{ url('user-reset-password',$token) }}" style="color: #f78f33;">Reset Password</a></span></h2>
-            				
+            			<div class="text" style="padding: 0 2.5em;color: black; ">
+            				<p>Dear {{auth()->user()->name}},</p>
+                            <p>We have received your order {{}} . You can sit back and relax. We are on it!</p>
+                            <p>For support, please call 76827827298 </p>
+                            <p>Thank You.</p>
+                            <p>Ogaglobal Logistics Team</p>
+                    
             			</div>
             		</td>
             	</tr>
@@ -368,7 +359,6 @@ ul.social li{
 	      </tr><!-- end tr -->
       <!-- 1 Column Text + Button : END -->
       </table>
-      <br>
       <br>
       <table align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="margin: auto;">
       	
