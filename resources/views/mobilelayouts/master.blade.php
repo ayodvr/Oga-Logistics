@@ -14,6 +14,14 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/vendors.css') }}" />
     <!-- app style -->
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/style.css') }}" />
+    <style>
+        th.hidden-column {
+            display: none;
+        }
+        td.hidden-column {
+            display: none;
+        }
+    </style>
 </head>
 <body>
     <!-- begin app -->

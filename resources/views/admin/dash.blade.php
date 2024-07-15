@@ -77,7 +77,7 @@
                                         >
                                           <thead>
                                             <tr>
-                                                <th >Id</th>
+                                                <th class="hidden-column">Id</th>
                                                 <th >Order Id</th>
                                                 <th >From</th>
                                                 <th >To</th>
@@ -88,10 +88,9 @@
                                             </tr>
                                           </thead>
                                           <tbody>
-                                            @if($estimate)
                                             @forEach($estimate as $estimates)
                                               <tr>
-                                                  <td>{{$estimates->id}}</td>
+                                                  <td class="hidden-column">{{$estimates->id}}</td>
                                                   <td>{{$estimates->order_id}}</td>
                                                   <td class="mt-2">{{$estimates->origin}}</td> 
                                                   <td>{{$estimates->destination}}</td>
@@ -111,7 +110,6 @@
                                                 </td>
                                               </tr>
                                               @endforEach
-                                              @endif
                                         </tbody>
                                           <tfoot>
                                             <tr>

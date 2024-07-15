@@ -69,13 +69,13 @@ class CustomerController extends Controller
         $summary = Customer::findorfail($order->id)->latest()->first();
 
         if($summary){
-
+            $user_name = User::where('id', $summary->user_id)->get();
             $trackingValue = $summary->tracking;
             $origin        = $summary->origin;
             $destination   = $summary->destination;
             $total_cost    = $summary->trip_cost;
-            $user_name     = $user_details['name'];
-            \Mail::send('emails.orderdelivered', [
+            $user_name     = $user_name[0]['name'];
+            \Mail::send('emails.orderPlaced', [
                 'trackingId'  => $trackingValue,
                 'origin'      => $origin,
                 'destination' => $destination,
@@ -85,11 +85,14 @@ class CustomerController extends Controller
         {
             $tracking = Customer::where('tracking', $trackingValue)->first();
             $userMail = User::where('id', $tracking->user_id)->first();
-            $recipient = $userMail['email'];
+            $recipient = [
+                $userMail['email'],
+                'info@ogalogistics.com'
+            ];
 
             $message->from('info@ogalogistics.com', 'Ogaglobal Logistics');
             $message->to($recipient);
-            $message->subject('Your Order Has Been Delivered!');
+            $message->subject('Order Received!');
         });
 
             return view('customer.orderPlaced')->with('summary', $summary);

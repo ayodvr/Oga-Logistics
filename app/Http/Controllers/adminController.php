@@ -42,11 +42,13 @@ class adminController extends Controller
             $random = random_int(100000, 999999);
             
             $user = User::create([
-                'name' => $request->name,
-                'last_name' => $request->last_name,
-                'email' => $request->email,
-                'phone' => $request->phone,
-                'password' => Hash::make($request->password),
+                'name'        => $request->name,
+                'last_name'   => $request->last_name,
+                'email'       => $request->email,
+                'verify_user' => 1,
+                'code'        => $random,
+                'phone'       => $request->phone,
+                'password'    => Hash::make($request->password),
             ]);
 
             $user->addRole('driver');
@@ -62,10 +64,24 @@ class adminController extends Controller
                     'nin' => $request->nin,
                     'state' => $request->state,
                     'lga' => $request->lga,
+                    'password' => $request->password
                 ]);
 
-                return back()->with('success', 'Driver has been registered');
-            }
+                $driverEmail = $driver->email;
+                \Mail::send('emails.driverCreated', [
+                    'driverName'     => $driver->name,
+                    'driverEmail'    => $driver->email,
+                    'driverPassword' => $driver->password,
+            ], function ($message) use ($driverEmail)
+            {
+                $recipient = $driverEmail;
+                $message->from('info@ogalogistics.com', 'Ogaglobal Logistics');
+                $message->to($recipient);
+                $message->subject('Your account has been created!');
+            });
+
+            return back()->with('success', 'Driver has been registered');
+        }
     }
 
     public function managepartners()
@@ -118,6 +134,8 @@ class adminController extends Controller
                 'name' => $request->name,
                 'last_name' => $request->last_name,
                 'email' => $request->email,
+                'verify_user' => 1,
+                'code'        => $random,
                 'phone' => $request->phone,
                 'password' => Hash::make($request->password),
             ]);
@@ -126,7 +144,7 @@ class adminController extends Controller
 
             if($user){
 
-                $driver = Partner::create([
+                $partner = Partner::create([
                     'name'      => $request->name,
                     'last_name' => $request->last_name,
                     'email'     => $request->email,
@@ -137,6 +155,19 @@ class adminController extends Controller
                     'state'     => $request->state,
                     'lga'       => $request->lga
                 ]);
+
+                $partnerEmail = $partner->email;
+                \Mail::send('emails.driverCreated', [
+                    'driverName'     => $partner->name,
+                    'driverEmail'    => $partner->email,
+                    'driverPassword' => $partner->password,
+            ], function ($message) use ($partnerEmail)
+            {
+                $recipient = $partnerEmail;
+                $message->from('info@ogalogistics.com', 'Ogaglobal Logistics');
+                $message->to($recipient);
+                $message->subject('Your account has been created!');
+            });
 
                 return back()->with('success', 'Partner has been registered');
             }
