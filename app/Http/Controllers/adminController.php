@@ -214,7 +214,7 @@ class adminController extends Controller
 
     public function orderallocation()
     {
-        $estimate = Customer::orderBy('id', 'desc')->latest();
+        $estimate = Customer::orderBy('id', 'desc')->get();
         $driver = User::orderBy('created_at', 'desc')->whereHasRole(['driver'])->get();
         $driver_idm = $driver[0]['id'];
         return view('admin.orderallocation')->with('estimate', $estimate)
@@ -242,7 +242,7 @@ class adminController extends Controller
                 'tracking'           => $allocate[0]['tracking'],
                 'order_id'           => $allocate[0]['order_id'],
                 'driver_id'          => $request->state,
-                'assigned'           => $driver_name[0]['name'] ." ". $driver_name[0]['last_name']
+                'assigned'           => $driver_name[0]['name']
         ];
 
         // dd($data);
@@ -250,6 +250,30 @@ class adminController extends Controller
         $customer = Customer::find($id);
 
         $customer->update($data);
+
+            if($customer){
+                $orderId       = $data['order_id'];
+                $origin        = $data['origin'];
+                $destination   = $data['destination'];
+                $total_cost    = $data['order_id'];
+                $driver_name   = $data['assigned'];
+                \Mail::send('emails.driverOrder', [
+                    'orderId'     => $orderId,
+                    'origin'      => $origin,
+                    'destination' => $destination,
+                    'total_cost'  => $total_cost,
+                    'driver_name' => $driver_name
+            ], function ($message) use ($orderId)
+            {
+                $order = Customer::where('order_id', $orderId)->first();
+                $userMail = User::where('id', $order->driver_id)->first();
+                $recipient = $userMail['email'];
+
+                $message->from('info@ogalogistics.com', 'Ogaglobal Logistics');
+                $message->to($recipient);
+                $message->subject('You Have a Delivery To Fulfill');
+            });
+        }
 
         return back();
         }

@@ -33,7 +33,7 @@
                     </ul>
                     <ul class="navbar-nav nav-right ml-auto">
                     
-                        <li class="nav-item dropdown">
+                        {{-- <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="javascript:void(0)" id="navbarDropdown3" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <i class="fe fe-bell"></i>
                                 <span class="notify">
@@ -132,7 +132,7 @@
                                     </li>
                                 </ul>
                             </div>
-                        </li>
+                        </li> --}}
 
                         <li class="nav-item dropdown user-profile">
                             <a href="javascript:void(0)" class="nav-link dropdown-toggle " id="navbarDropdown4" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -143,8 +143,8 @@
                                 <div class="bg-gradient px-4 py-3">
                                     <div class="d-flex align-items-center justify-content-between">
                                         <div class="mr-1">
-                                            <h4 class="text-white mb-0">Alice Williams</h4>
-                                            <small class="text-white">Henry@example.com</small>
+                                            <h4 class="text-white mb-0">{{auth()->user()->name." ".auth()->user()->last_name}}</h4>
+                                            <small class="text-white">{{auth()->user()->email}}</small>
                                         </div>
                                        
                                         <a href="/logout" class="text-white font-20 tooltip-wrapper" data-toggle="tooltip" 
@@ -152,13 +152,13 @@
                                     </form>
                                     </div>
                                 </div>
-                                <div class="p-4">
+                                {{-- <div class="p-4">
                                     <a class="dropdown-item d-flex nav-link" href="javascript:void(0)">
                                         <i class="fa fa-user pr-2 text-success"></i> Profile</a>
                                     <a class="dropdown-item d-flex nav-link" href="javascript:void(0)">
                                         <i class=" ti ti-settings pr-2 text-info"></i> Settings
                                     </a>
-                                </div>
+                                </div> --}}
                             </div>
                         </li>
                     </ul>

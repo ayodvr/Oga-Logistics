@@ -345,7 +345,7 @@ ul.social li{
             	<tr>
             		<td>
             			<div class="text" style="padding: 0 2.5em;color: black; ">
-            				<p>Dear {{auth()->user()->name}},</p>
+            				<p>Dear {{$user_name}},</p>
                     <p>Thank you for using Ogaglobal Logistics as your delivery partner! Your order was successfully delivered.</p>
                      
             			</div>
@@ -363,22 +363,20 @@ ul.social li{
             	<tr>
                 <td style="margin: 0px; width: 197.891px;">Order Number:</td>
                 <td style="margin: 0px; width: 197.891px;">
-                <p>517618</p>
+                <p>{{$trackingId}}</p>
                 </td>
                 </tr>
                 <tr>
                 <td style="margin: 0px; width: 197.891px;">Picked from:</td>
                 <td style="margin: 0px; width: 197.891px;">
-                <p>76 Jibowu Street, Ifako-Ijaiye, Ojokoro Lagos Nigeria
-                101232</p>
+                <p>{{$origin}}</p>
                 </td>
                 </tr>
                 <tr>
                 <td style="margin: 0px; width: 197.891px;">Successfully
                 Delivered at:</td>
                 <td style="margin: 0px; width: 197.891px;">
-                <p>76 Jibowu Street, Ifako-Ijaiye, Ojokoro Lagos Nigeria
-                101232</p>
+                <p>{{$destination}}</p>
                 </td>
                 </tr>
                 <tr>
@@ -388,7 +386,7 @@ ul.social li{
                 <tr>
                   <td style="margin: 0px; width: 197.891px;">Delivery
                   Chargers:</td>
-                  <td style="margin: 0px; width: 197.891px;">4802.65</td>
+                  <td style="margin: 0px; width: 197.891px;">{{$total_cost}}</td>
                   </tr>
                   <tr>
                   <td style="margin: 0px; width: 197.891px;">Discount:</td>
@@ -402,7 +400,7 @@ ul.social li{
                   <tr>
                   <td style="margin: 0px; width: 197.891px;"><strong>Total
                   Charges:</strong></td>
-                  <td style="margin: 0px; width: 197.891px;"><strong>4900</strong></td>
+                  <td style="margin: 0px; width: 197.891px;"><strong>{{$total_cost}}</strong></td>
                   </tr>
               
             </table>

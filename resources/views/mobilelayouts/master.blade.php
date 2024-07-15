@@ -53,7 +53,7 @@
     event.preventDefault();
     const url = $(this).attr('href');
         swal({
-            title:  `Has payment been made into the account below ?`,
+            title:  `Ensure payment been made before you fulfill order`,
             text: `${name}`,
             icon: 'warning',
             buttons: ["Cancel", "Yes...Confirm!"],

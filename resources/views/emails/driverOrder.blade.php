@@ -340,25 +340,96 @@ ul.social li{
 	      </tr><!-- end tr -->
 	      
 				<tr>
-          <td valign="middle" class="hero bg_white" style="padding: 2em 0 4em 0;">
+          <td valign="middle" class="hero bg_white" style="padding:;">
             <table>
             	<tr>
             		<td>
             			<div class="text" style="padding: 0 2.5em;color: black; ">
-            				<p>Dear {{$user_name}},</p>
-                            <p>We have received your order {{$trackingId}} . You can sit back and relax. We are on it!</p>
-                            <p>For support, please call 76827827298 </p>
-                            <p>Thank You.</p>
-                            <p>Ogaglobal Logistics Team</p>
-                    
+            				<p>Dear {{$driver_name}},</p>
+                    <p>You have an order to fulfill, Kindly see the details below</p>
+                     
             			</div>
             		</td>
             	</tr>
+              
             </table>
+            
           </td>
+          
+	      </tr><!-- end tr -->
+        <tr>
+          <td valign="middle" class="hero bg_white" style="margin-top: 150px;color: black;">
+            <table>
+            	<tr>
+                <td style="margin: 0px; width: 197.891px;">Order Number:</td>
+                <td style="margin: 0px; width: 197.891px;">
+                <p>{{$orderId}}</p>
+                </td>
+                </tr>
+                <tr>
+                <td style="margin: 0px; width: 197.891px;">Picked from:</td>
+                <td style="margin: 0px; width: 197.891px;">
+                <p>{{$origin}}</p>
+                </td>
+                </tr>
+                <tr>
+                <td style="margin: 0px; width: 197.891px;">Successfully
+                Delivered at:</td>
+                <td style="margin: 0px; width: 197.891px;">
+                <p>{{$destination}}</p>
+                </td>
+                </tr>
+                <tr>
+                <td style="margin: 0px; width: 197.891px;">&nbsp;</td>
+                <td style="margin: 0px; width: 197.891px;">&nbsp;</td>
+                </tr>
+                <tr>
+                  <td style="margin: 0px; width: 197.891px;">Delivery
+                  Chargers:</td>
+                  <td style="margin: 0px; width: 197.891px;">{{$total_cost}}</td>
+                  </tr>
+                  <tr>
+                  <td style="margin: 0px; width: 197.891px;">Discount:</td>
+                  <td style="margin: 0px; width: 197.891px;">0</td>
+                  </tr>
+                  <tr>
+                  <td style="margin: 0px; width: 197.891px;">Insurance
+                  Amount:</td>
+                  <td style="margin: 0px; width: 197.891px;">0</td>
+                  </tr>
+                  <tr>
+                  <td style="margin: 0px; width: 197.891px;"><strong>Total
+                  Charges:</strong></td>
+                  <td style="margin: 0px; width: 197.891px;"><strong>{{$total_cost}}</strong></td>
+                  </tr>
+              
+            </table>
+            
+          </td>
+        
+	      </tr><!-- end tr -->
+        <tr>
+          <td valign="middle" class="hero bg_white" style="padding:;">
+            <table>
+            	<tr>
+            		<td>
+            			<div class="text" style="padding: 0 2.5em;color: black;text-align: center; ">
+            				<p>Thank you,<br>
+                    Ogaglobal Logistics Team</p>
+            
+            			</div>
+            		</td>
+            	</tr>
+              
+            </table>
+            
+          </td>
+          
 	      </tr><!-- end tr -->
       <!-- 1 Column Text + Button : END -->
+       
       </table>
+      
       <br>
       <table align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="margin: auto;">
       	
@@ -393,5 +464,7 @@ ul.social li{
 
     </div>
   </center>
+
+  
 </body>
 </html>

@@ -345,8 +345,8 @@ ul.social li{
             	<tr>
             		<td>
             			<div class="text" style="padding: 0 2.5em;color: black; ">
-            				<p>Dear {{auth()->user()->name}},</p>
-                            <p>Your order {{}} has been picked up successfully at <span id="dm"></span>. We will deliver in a bit!</p>
+            				<p>Dear {{$user_name}},</p>
+                            <p>Your order {{$trackingId}} has been picked up successfully at <span id="dm"></span>. We will deliver in a bit!</p>
                             <p>For support, please call 76827827298 </p>
                             <p>Thank You.</p>
                             <p>Ogaglobal Logistics Team</p>

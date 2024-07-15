@@ -25,17 +25,29 @@ class driverController extends Controller
        
     }
 
-    public function acceptOrder($id){
-        $accept = Customer::find($id)->update(['accepted'=> 1]);
-        if($accept){
-            \Mail::send('emails.orderaccepted', array(), function($message)
-        {
-            $email = 'martinjasmine42@gmail.com';
-            $message->from('martinjasmine42@gmail.com', "Ogaglobal Logistics");
-            $message->to('martinjasmine42@gmail.com');
-            $message->subject('We Received Your Order Request');
-        });
-    }
+    public function acceptOrder($id)
+    {
+        $accept = Customer::find($id)->update(['accepted' => 1]);
+        $trackingId = Customer::find($id);
+        $user_details = User::where('id', $trackingId->user_id)->first();
+
+        if ($trackingId) {
+            $trackingValue = $trackingId->tracking;
+            $user_name = $user_details['name'];
+
+            \Mail::send('emails.orderaccepted', [
+                'trackingId' => $trackingValue,
+                'user_name'  => $user_name
+            ], function ($message) use ($trackingValue) {
+                $tracking = Customer::where('tracking', $trackingValue)->first();
+                $userMail = User::where('id', $tracking->user_id)->first();
+                $recipient = $userMail['email'];
+
+                $message->from('info@ogalogistics.com', 'Ogaglobal Logistics');
+                $message->to($recipient);
+                $message->subject('We Received Your Order Request');
+            });
+        }
 
         return back();
     }
@@ -43,14 +55,25 @@ class driverController extends Controller
     public function pickedUp($id){
        $picked_1 =  Customer::find($id)->update(['accepted'=> 2]);
        $picked_2 =  Customer::find($id)->update(['picked_up'=> 1]);
+       $trackingId = Customer::find($id);
+       $user_details = User::where('id', $trackingId->user_id)->first();
 
-        if($picked_1 && $picked_2){
-            \Mail::send('emails.orderpickedup', array(), function($message)
+        if($picked_1 && $picked_2 && $trackingId){
+        $trackingValue = $trackingId->tracking;
+        $user_name = $user_details['name'];
+
+        \Mail::send('emails.orderpickedup', [
+            'trackingId' => $trackingValue,
+            'user_name'  => $user_name
+        ], function ($message) use ($trackingValue)
         {
-            $email = 'martinjasmine42@gmail.com';
-            $message->from('martinjasmine42@gmail.com', "Ogaglobal Logistics");
-            $message->to('martinjasmine42@gmail.com');
-            $message->subject('Your Order Has Been Picked!');
+            $tracking = Customer::where('tracking', $trackingValue)->first();
+            $userMail = User::where('id', $tracking->user_id)->first();
+            $recipient = $userMail['email'];
+
+            $message->from('info@ogalogistics.com', 'Ogaglobal Logistics');
+            $message->to($recipient);
+            $message->subject('Your Order Has Been Picked');
         });
     }
 
@@ -60,14 +83,30 @@ class driverController extends Controller
     public function delivered($id){
         $delivered_1 = Customer::find($id)->update(['accepted'=> 3]);
         $delivered_2 = Customer::find($id)->update(['delivered'=> 1]);
+        $trackingId = Customer::find($id);
+        $user_details = User::where('id', $trackingId->user_id)->first();
 
-        if($delivered_1 && $delivered_2){
-            \Mail::send('emails.orderdelivered', array(), function($message)
+        if($delivered_1 && $delivered_2 && $trackingId){
+            $trackingValue = $trackingId->tracking;
+            $origin        = $trackingId->origin;
+            $destination   = $trackingId->destination;
+            $total_cost    = $trackingId->trip_cost;
+            $user_name     = $user_details['name'];
+            \Mail::send('emails.orderdelivered', [
+                'trackingId'  => $trackingValue,
+                'origin'      => $origin,
+                'destination' => $destination,
+                'total_cost'  => $total_cost,
+                'user_name'   => $user_name
+        ], function ($message) use ($trackingValue)
         {
-            $email = 'martinjasmine42@gmail.com';
-            $message->from('martinjasmine42@gmail.com', "Ogaglobal Logistics");
-            $message->to('martinjasmine42@gmail.com');
-            $message->subject('Your Order Has Been Delivered');
+            $tracking = Customer::where('tracking', $trackingValue)->first();
+            $userMail = User::where('id', $tracking->user_id)->first();
+            $recipient = $userMail['email'];
+
+            $message->from('info@ogalogistics.com', 'Ogaglobal Logistics');
+            $message->to($recipient);
+            $message->subject('Your Order Has Been Delivered!');
         });
     }
 
@@ -78,12 +117,22 @@ class driverController extends Controller
         $declined = Customer::find($id);
         $declined->delete();
 
-        if($declined){
-            \Mail::send('emails.ordercancelled', array(), function($message)
+        $tracking = $declined->tracking;
+        $user_details = User::where('id', $declined->user_id)->first();
+        
+        if($user_details){
+            $user_name = $user_details['name'];
+            $recipient = $user_details['email'];
+            $tracking_id = $tracking;
+    
+            \Mail::send('emails.ordercancelled',[
+                'user_name'  => $user_name,
+                'trackingId' => $tracking_id
+            ], function($message) use ($recipient)
         {
-            $email = 'martinjasmine42@gmail.com';
-            $message->from('martinjasmine42@gmail.com', "Ogaglobal Logistics");
-            $message->to('martinjasmine42@gmail.com');
+            $email = $recipient;
+            $message->from('info@ogalogistics.com', "Ogaglobal Logistics");
+            $message->to($recipient);
             $message->subject('Your Order Has Been Cancelled');
         });
     }
@@ -100,11 +149,15 @@ class driverController extends Controller
        {
            $user = User::find($id);
 
-           $deleted = $user->delete();
+           if($user){
 
-           if($deleted){
+            $deleted = $user->delete();
 
             Driver::where('user_id', $user->id)->delete();
+
+                return back();
+                
+           }else{
 
                 return back();
            }

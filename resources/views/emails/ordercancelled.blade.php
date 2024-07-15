@@ -345,8 +345,8 @@ ul.social li{
             	<tr>
             		<td>
             			<div class="text" style="padding: 0 2.5em;color: black; ">
-            				<p>Dear {{auth()->user()->name}},</p>
-                            <p>We regret  to inform you that your order with the order number {{}} has been canceled. We apologize for any inconvenience this may cause.</p>
+            				<p>Dear {{$user_name}},</p>
+                            <p>We regret  to inform you that your order with the order number {{$trackingId}} has been canceled. We apologize for any inconvenience this may cause.</p>
                             <p>If you have any questions or need further assistance, please do not hesitate to contact our customer service team at 076827827298 </p>
                             <p>Thank You for your understanding.</p>
                             <p>Ogaglobal Logistics Team</p>
