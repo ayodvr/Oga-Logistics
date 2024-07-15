@@ -244,7 +244,7 @@
                 <span class="menu-item-title">Order History</span>
                 <span class="menu-item-click fas fa-arrow-right"></span>
             </a>
-            <a class="menu-item" href="history.html">
+            <a class="menu-item" href="/support">
                 <span class="menu-item-icon menu-dark support">
                     <img src="{{asset('mobstyle/icons/support.svg')}}" alt="Support Icon">
                 </span>
