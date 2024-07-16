@@ -1,0 +1,17 @@
+{
+    "name": "Ogaglobal Logistics",
+    "short_name": "OGL",
+    "start_url": "/index.php",
+    "background_color": "#6777ef",
+    "description": "Your Reliable Logistics Company",
+    "display": "fullscreen",
+    "theme_color": "#6777ef",
+    "icons": [
+        {
+            "src": "og-icon.png",
+            "sizes": "450x450",
+            "type": "image/png",
+            "purpose": "any maskable"
+        }
+    ]
+}

@@ -5,7 +5,7 @@
                         <p>&copy; Copyright 2024. All rights reserved.</p>
                     </div>
                     <div class="col  col-sm-6 ml-sm-auto text-center text-sm-right">
-                        <p>Oga Global</p>
+                        <p>Ogaglobal Logistics</p>
                     </div>
                 </div>
             </footer>

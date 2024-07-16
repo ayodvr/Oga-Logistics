@@ -60,14 +60,14 @@
                             <x-input-error :messages="$errors->get('phone')" class="mt-2" />
 
                             <div class="input-group mb-3">
-                                <input class="form-control" type="password" name="password" placeholder="Password" id="checkbox"  required >
-                                <span class="input-group-text" id="basic-addon1"><i class="fa fa-eye" style="font-size:18px;margin-top:1px;" onclick="myFunction()"></i></span>
+                                <input class="form-control" type="password" name="password" placeholder="Password" id="password"  required >
+                                <span class="input-group-text" id="basic-addon1"><i class="fa fa-eye" style="font-size:18px;margin-top:1px;" onclick="togglePassword('password', this)"></i></span>
                                 <x-input-error :messages="$errors->get('password')" class="mt-2" />
                             </div>
                             
                             <div class="input-group mb-3">
-                                <input class="form-control" type="password" name="password_confirmation" placeholder="Confirm Password" id="checkbox2" required >
-                                <span class="input-group-text" id="basic-addon1"><i class="fa fa-eye" style="font-size:18px;margin-top:1px;" onclick="myFunction()"></i></span>
+                                <input class="form-control" type="password" name="password_confirmation" placeholder="Confirm Password" id="confirm-password" required >
+                                <span class="input-group-text" id="basic-addon1"><i class="fa fa-eye" style="font-size:18px;margin-top:1px;" onclick="togglePassword('confirm-password', this)"></i></span>
                                 <x-input-error :messages="$errors->get('password_confirmation')" class="mt-2" />
                             </div>
 
@@ -83,23 +83,17 @@
     </div>
 
     <script>
-function myFunction() {
-  var x = document.getElementById("checkbox");
-  var y = document.getElementById("checkbox2");
-
-  if (x.type === "password") {
-    x.type = "text";
-  } else {
-    x.type = "password";
-  }
-
-  if (y.type === "password") {
-    y.type = "text";
-  } else {
-    y.type = "password";
-  }
-}
-</script>
+        function togglePassword(checkbox, element) {
+            const passwordInput = document.getElementById(checkbox);
+            const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+            passwordInput.setAttribute('type', type);
+      
+             // Change the icon based on password visibility
+             element.textContent = type === 'password' ? '' : '';
+      
+        }
+      
+      </script>
 
 <script src="js/jquery.min.js"></script>
 <script src="js/popper.min.js"></script>

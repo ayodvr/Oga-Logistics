@@ -10,6 +10,10 @@
     <link rel="stylesheet" type="text/css" href="{{asset('log/css/fontawesome-all.min.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('log/css/iofrm-style.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('log/css/iofrm-theme4.css')}}">
+    <!-- PWA  -->
+    <meta name="theme-color" content="#6777ef"/>
+    <link rel="apple-touch-icon" href="{{ asset('logo.png') }}">
+    <link rel="manifest" href="{{ asset('/manifest.json') }}">
 </head>
 <body>
     <div class="form-body">
@@ -78,19 +82,33 @@
             </div>
         </div>
     </div>
-
-    <script>
-function myFunction() {
-  var x = document.getElementById("checkbox");
-  
-
-  if (x.type === "password") {
-    x.type = "text";
-  } else {
-    x.type = "password";
-  }
-}
+    
+<script src="{{ asset('/sw.js') }}"></script>
+<script>
+    if ("serviceWorker" in navigator) {
+        // Register a service worker hosted at the root of the
+        // site using the default scope.
+        navigator.serviceWorker.register("/sw.js").then(
+        (registration) => {
+            console.log("Service worker registration succeeded:", registration);
+        },
+        (error) => {
+            console.error(`Service worker registration failed: ${error}`);
+        },
+    );
+    } else {
+        console.error("Service workers are not supported.");
+    }
 </script>
-
+<script>
+    function myFunction() {
+        var x = document.getElementById("checkbox");
+        if (x.type === "password") {
+            x.type = "text";
+        } else {
+            x.type = "password";
+        }
+    }
+</script>
 </body>
 </html>

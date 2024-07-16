@@ -112,7 +112,8 @@
                                                   {{-- <div class="input-group-prepend">
                                                    <span><img src="{{asset('mobstyle/icons/lock.svg')}}" alt="Lock Icon"></span>
                                                   </div> --}}
-                                                  <input class="form-control" type="password" name="password" placeholder="Password">
+                                                  <input class="form-control" type="password" name="password" id="password" placeholder="Password">
+                                                  <span class="input-group-text" id="basic-addon1"><i class="fa fa-eye" style="font-size:18px;margin-top:1px;" onclick="togglePassword('password', this)"></i></span>
                                                   {{-- <div class="input-group-append password-visibility">
                                                       <span>
                                                           <img src="{{asset('mobstyle/icons/eye.svg')}}" alt="Password Visibility Icon">
@@ -127,7 +128,8 @@
                                                 {{-- <div class="input-group-prepend">
                                                     <span><img src="{{asset('mobstyle/icons/lock.svg')}}" alt="Lock Icon"></span>
                                                 </div> --}}
-                                                <input class="form-control" type="password" name="password_confirmation" placeholder="Confirm Password">
+                                                <input class="form-control" type="password" name="password_confirmation" id="confirm-password" placeholder="Confirm Password">
+                                                <span class="input-group-text" id="basic-addon1"><i class="fa fa-eye" style="font-size:18px;margin-top:1px;" onclick="togglePassword('confirm-password', this)"></i></span>
                                                 {{-- <div class="input-group-append password-visibility">
                                                     <span>
                                                         <img src="{{asset('mobstyle/icons/eye.svg')}}" alt="Password Visibility Icon">
@@ -1070,5 +1072,18 @@
       }
   
   </script>
+
+<script>
+  function togglePassword(checkbox, element) {
+      const passwordInput = document.getElementById(checkbox);
+      const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+      passwordInput.setAttribute('type', type);
+
+       // Change the icon based on password visibility
+       element.textContent = type === 'password' ? '' : '';
+
+  }
+
+</script>
 
 @endsection
