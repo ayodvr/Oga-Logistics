@@ -12,7 +12,7 @@
     <link rel="stylesheet" type="text/css" href="{{asset('log/css/iofrm-theme4.css')}}">
     <!-- PWA  -->
     <meta name="theme-color" content="#6777ef"/>
-    <link rel="apple-touch-icon" href="{{ asset('logo.png') }}">
+    <link rel="apple-touch-icon" href="{{ asset('og-icon.png') }}">
     <link rel="manifest" href="{{ asset('/manifest.json') }}">
 </head>
 <body>
