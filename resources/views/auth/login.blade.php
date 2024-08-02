@@ -34,6 +34,7 @@
                         <div class="logo">
                             <img class="logo-size" style="width: 280px;height: auto;margin-bottom: 100px;" src="{{asset('log/images/log2.png')}}" alt="">
                         </div>
+                        {{-- <button id="installButton">Install App</button> --}}
                         <h3>Welcome to OGAGLOBAL LOGISTICS</h3>
                         <p>Your gateway to effortless shipping and tracking.</p>
                         @if(count($errors) > 0)
@@ -83,22 +84,59 @@
         </div>
     </div>
     
-<script src="{{ asset('/sw.js') }}"></script>
+
 <script>
-    if ("serviceWorker" in navigator) {
-        // Register a service worker hosted at the root of the
-        // site using the default scope.
-        navigator.serviceWorker.register("/sw.js").then(
-        (registration) => {
-            console.log("Service worker registration succeeded:", registration);
-        },
-        (error) => {
-            console.error(`Service worker registration failed: ${error}`);
-        },
-    );
-    } else {
-        console.error("Service workers are not supported.");
+let deferredPrompt;
+
+// Listen for the beforeinstallprompt event
+window.addEventListener('beforeinstallprompt', (e) => {
+    e.preventDefault(); // Prevent the default prompt
+    deferredPrompt = e; // Save the event for later
+    showInstallButton(); // Show the install button
+});
+
+// Show the install button
+function showInstallButton() {
+    const installButton = document.getElementById('installButton');
+    if (installButton) {
+        installButton.style.display = 'block';
     }
+}
+
+// Handle the install button click event
+document.getElementById('installButton').addEventListener('click', (e) => {
+    const installButton = document.getElementById('installButton');
+    if (installButton && deferredPrompt) {
+        installButton.style.display = 'none'; // Hide the button
+        deferredPrompt.prompt(); // Show the installation prompt
+        deferredPrompt.userChoice.then((choiceResult) => {
+            if (choiceResult.outcome === 'accepted') {
+                console.log('User accepted the install prompt');
+            } else {
+                console.log('User dismissed the install prompt');
+                installButton.style.display = 'block'; // Show the button again if the user dismissed
+            }
+            deferredPrompt = null; // Clear the prompt
+        });
+    }
+});
+
+// Check if the app is already installed
+window.addEventListener('appinstalled', (evt) => {
+    console.log('PWA was installed');
+    hideInstallButton(); // Hide the button if the app is installed
+});
+
+// Register the service worker
+if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/service-worker.js')
+        .then(function(registration) {
+            console.log('Service Worker registered with scope:', registration.scope);
+        }).catch(function(error) {
+            console.log('Service Worker registration failed:', error);
+        });
+}
+
 </script>
 <script>
     function myFunction() {
