@@ -44,6 +44,7 @@ Route::post('/allocated/{order}/{id}', 'App\Http\Controllers\adminController@all
 Route::get('/trackorder/{id}', "App\Http\Controllers\dashcontroller@trackorder")->name('trackorder');
 Route::get('/orderhistory', "App\Http\Controllers\dashcontroller@orderhistory")->name('orderhistory');
 Route::get('/support', "App\Http\Controllers\dashcontroller@support")->name('support');
+Route::get('/account', "App\Http\Controllers\dashcontroller@account")->name('account');
 Route::get('/arrivalproblem', "App\Http\Controllers\dashcontroller@arrivalproblem")->name('arrivalproblem');
 Route::get('/payproblem', "App\Http\Controllers\dashcontroller@payproblem")->name('payproblem');
 Route::get('/driverproblem', "App\Http\Controllers\dashcontroller@driverproblem")->name('driverproblem');

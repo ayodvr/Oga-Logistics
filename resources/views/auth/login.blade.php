@@ -1,43 +1,59 @@
-
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ogaglobal Logistics - Login</title>
-    <link rel="stylesheet" type="text/css" href="{{asset('log/css/bootstrap.min.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('log/css/fontawesome-all.min.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('log/css/iofrm-style.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('log/css/iofrm-theme4.css')}}">
-    <!-- PWA  -->
-    <meta name="theme-color" content="#6777ef"/>
-    <link rel="apple-touch-icon" href="{{ asset('logo.png') }}">
-    <link rel="manifest" href="{{ asset('/manifest.json') }}">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Taxigo - Taxi Booking Mobile App</title>
+  <link rel="icon" href="{{asset('main/assets/images/favicon/icon-3.png')}}">
+  <link href="../../../../css2-6?family=League+Spartan:wght@100..900&display=swap" rel="stylesheet">
+  <link href="../../../../css2-7?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{asset('main/assets/css/all.min-3.css')}}">
+  <link rel="stylesheet" href="{{asset('main/assets/css/slick-3.css')}}">
+  <link rel="stylesheet" href="{{asset('main/assets/css/bootstrap.min-3.css')}}">
+  <link rel="stylesheet" href="{{asset('main/assets/css/intlTelInput-2.css')}}">
+  <link rel="stylesheet" href="{{asset('main/assets/css/style-3.css')}}">
+  <link rel="stylesheet" href="{{asset('main/assets/css/media-query-3.css')}}">
 </head>
 <body>
-    <div class="form-body">
-        
-        <div class="row">
-            <div class="img-holder">
-                <div class="bg"></div>
-                <div class="info-holder">
-                    <img src="{{asset('log/images/servv.png')}}" alt="">
-                </div>
-            </div>
-            
-            <div class="form-holder" >
-                
-                <div class="form-content">
-                    
-                    <div class="form-items">
-                        <div class="logo">
-                            <img class="logo-size" style="width: 280px;height: auto;margin-bottom: 100px;" src="{{asset('log/images/log2.png')}}" alt="">
-                        </div>
-                        {{-- <button id="installButton">Install App</button> --}}
-                        <h3>Welcome to OGAGLOBAL LOGISTICS</h3>
-                        <p>Your gateway to effortless shipping and tracking.</p>
-                        @if(count($errors) > 0)
+  <div class="site-content">
+    <!-- Preloader start -->
+    <div class="loader-mask">
+      <div class="loading-window">
+        <div class="car">
+          <div class="strike"></div>
+          <div class="strike strike2"></div>
+          <div class="strike strike3"></div>
+          <div class="strike strike4"></div>
+          <div class="strike strike5"></div>
+          <div class="car-detail spoiler"></div>
+          <div class="car-detail back"></div>
+          <div class="car-detail center"></div>
+          <div class="car-detail center1"></div>
+          <div class="car-detail front"></div>
+          <div class="car-detail wheel"></div>
+          <div class="car-detail wheel wheel2"></div>
+        </div>
+      </div>
+    </div>
+    <!-- Preloader end -->
+    <!-- Sign in screen content start -->
+    <div class="let-you-page-main">
+      <div class="let-you-top">
+        <div class="let-you-top-wrap">
+          <header class="back-btn">
+           
+          </header>
+          <div class="taxi-img_main">
+            <img class="taxi-img_img" src="{{asset('main/assets/images/let-you-screen/logo-2.svg')}}" alt="logo">
+          </div>
+        </div>
+      </div>
+      <div class="let-you-social-sec">
+        <div class="lets_you_in_box">
+          <h1 class="d-none">hidden</h1>
+          <h2 class="lets_you_in_text">Sign In</h2>
+          <br>
+                            @if(count($errors) > 0)
                             @foreach($errors->all() as $error)
                             <div class="alert alert-danger" style="width:100%; margin:auto">
                                 {{$error}}</div>
@@ -53,92 +69,49 @@
                             {{session('error')}}</div>
                             @endif
                             <br>
-                        <div class="page-links">
-                            <a href="login4.html" class="active">Login</a><a href="/register">Register</a>
-                        </div>
-                        <form method="POST" action="{{ route('login') }}" >
-                    @csrf
-                    <x-input-error :messages="$errors->get('email')" class="mt-2" style="color:red;font-weight:bold;" />
-                        <div class="input-group mb-3">
-                            <input class="form-control" type="text" name="email" placeholder="E-mail Address" required>
-                        </div>
-                            <div class="input-group mb-3">
-                                <input class="form-control" type="password" name="password" placeholder="Password" id="checkbox"  required >
-                                <span class="input-group-text" id="basic-addon1"><i class="fa fa-eye" style="font-size:18px;margin-top:1px;" onclick="myFunction()"></i></span>
-                                
-                            </div>
-                            <div class="form-button">
-                                <button id="submit" type="{{ __('login') }}" class="ibtn" >Login</button> 
-                                @if(Route::has('password.request'))
+          <form method="POST" action="{{ route('login') }}" >
+            @csrf
+            
+            <div class="input-group input-group-lg">
+                <input type="text" class="form-control" aria-label="Sizing example input" name="email" placeholder="Email Address" aria-describedby="inputGroup-sizing-lg">
+            </div>
+            <br>
+           
+            <div class="input-group input-group-lg">
+                <input type="password" class="form-control" name="password"  id="checkbox" aria-label="Sizing example input" placeholder="Password" aria-describedby="inputGroup-sizing-lg">
+                <span class="input-group-text" id="inputGroup-sizing-lg"><i class="fa fa-eye" style="font-size:18px;margin-top:1px;" onclick="myFunction()"> </i></span>
+            </div>
+            
+
+            <div class="sign-in-password-btn mt-32">
+            <button id="submit" type="{{ __('login') }}" class="ibtn" style="width: 100%;border-radius: 12px;background: #f78f33;display: flex;align-items: center;justify-content: center;padding: 15px 0;color: var(--1, #FFF);text-align: center;font-family: League Spartan, sans-serif;font-size: 20px;font-style: normal;font-weight: 500;line-height: 24px;margin: auto;max-width: 600px;"><b>Sign In</b></button> 
+            
+            </div>
+            <div class="block-footer" style="text-align:center;margin-top: 20px;">
+                            @if(Route::has('password.request'))
                                 <a
                                     href="{{ route('password.request') }}"
                                     >Forgot password?</a
                                 >
-                                @endif
-                            </div>
-                        </form>
-                       
-                    </div>
-                </div>
+                            @endif
             </div>
+          </form>
+          
+          
+          
         </div>
+        
+      </div>
+      <footer id="let-you-footer">
+        <div class="block-footer">
+        
+          <p>Don’t have an account? <a href="sign-up.html-2.htm">Sign up</a></p>
+        </div>
+      </footer>
     </div>
-    
-
-<script>
-let deferredPrompt;
-
-// Listen for the beforeinstallprompt event
-window.addEventListener('beforeinstallprompt', (e) => {
-    e.preventDefault(); // Prevent the default prompt
-    deferredPrompt = e; // Save the event for later
-    showInstallButton(); // Show the install button
-});
-
-// Show the install button
-function showInstallButton() {
-    const installButton = document.getElementById('installButton');
-    if (installButton) {
-        installButton.style.display = 'block';
-    }
-}
-
-// Handle the install button click event
-document.getElementById('installButton').addEventListener('click', (e) => {
-    const installButton = document.getElementById('installButton');
-    if (installButton && deferredPrompt) {
-        installButton.style.display = 'none'; // Hide the button
-        deferredPrompt.prompt(); // Show the installation prompt
-        deferredPrompt.userChoice.then((choiceResult) => {
-            if (choiceResult.outcome === 'accepted') {
-                console.log('User accepted the install prompt');
-            } else {
-                console.log('User dismissed the install prompt');
-                installButton.style.display = 'block'; // Show the button again if the user dismissed
-            }
-            deferredPrompt = null; // Clear the prompt
-        });
-    }
-});
-
-// Check if the app is already installed
-window.addEventListener('appinstalled', (evt) => {
-    console.log('PWA was installed');
-    hideInstallButton(); // Hide the button if the app is installed
-});
-
-// Register the service worker
-if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('/service-worker.js')
-        .then(function(registration) {
-            console.log('Service Worker registered with scope:', registration.scope);
-        }).catch(function(error) {
-            console.log('Service Worker registration failed:', error);
-        });
-}
-
-</script>
-<script>
+    <!-- Sign in screen content end -->
+  </div>
+  <script>
     function myFunction() {
         var x = document.getElementById("checkbox");
         if (x.type === "password") {
@@ -148,5 +121,11 @@ if ('serviceWorker' in navigator) {
         }
     }
 </script>
+  <script src="{{asset('main/assets/js/jquery.min-3.js')}}"></script>
+  <script src="{{asset('main/assets/js/slick.min-3.js')}}"></script>
+  <script src="{{asset('main/assets/js/bootstrap.bundle.min-3.js')}}"></script>
+  <script src="{{asset('main/assets/js/intlTelInput.min-2.js')}}"></script>
+  <script src="{{asset('main/assets/js/flag-2.js')}}"></script>
+  <script src="{{asset('main/assets/js/custom-3.js')}}"></script>
 </body>
 </html>

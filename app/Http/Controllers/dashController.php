@@ -95,4 +95,9 @@ class dashController extends Controller
         return view('customer.support');
     }
 
+    public function account()
+    {
+        return view('mobilelayouts.account');
+    }
+
 }
