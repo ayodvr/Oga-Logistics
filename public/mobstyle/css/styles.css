@@ -2139,7 +2139,7 @@ input:checked + .slider:before {
 #origin-input,
 #destination-input {
   background-color: #fff;
-  font-family: 'Roboto Condensed';
+  font-family: 'SF Pro Regular';
   font-size: 15px;
   font-weight: 300;
   text-overflow: ellipsis;

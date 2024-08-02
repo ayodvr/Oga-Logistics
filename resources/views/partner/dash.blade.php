@@ -1,4 +1,4 @@
-@extends('mobilelayouts.layouts')
+@extends('JointDashboard.dash')
 
 @section('content')
 

@@ -14,6 +14,14 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/vendors.css') }}" />
     <!-- app style -->
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/style.css') }}" />
+    <link rel="icon" href="{{asset('main/assets/images/favicon/icon-3.png')}}">
+	<link href="../../../../css2-6?family=League+Spartan:wght@100..900&display=swap" rel="stylesheet">
+	<link href="../../../../css2-7?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="{{asset('main/assets/css/all.min-3.css')}}">
+	<link rel="stylesheet" href="{{asset('main/assets/css/slick-3.css')}}">
+	<link rel="stylesheet" href="{{asset('main/assets/css/bootstrap.min-3.css')}}">
+	<link rel="stylesheet" href="{{asset('main/assets/css/style-3.css')}}">
+	<link rel="stylesheet" href="{{asset('main/assets/css/media-query-3.css')}}">
     <style>
         th.hidden-column {
             display: none;
@@ -38,7 +46,7 @@
             </div>
             @include('includes.header')
             <div class="app-container" >
-                @include('includes.aside')
+                @include('includes.ridenav')
                 <!-- begin app-main -->
                 <div class="app-main" id="main">
                     @yield('content')

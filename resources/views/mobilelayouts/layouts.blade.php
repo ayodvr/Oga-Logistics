@@ -21,7 +21,8 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/style.css') }}" />
     <!-- Main Style -->
     <link rel="stylesheet" href="{{asset('mobstyle/css/styles.css')}}">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="icon" href="{{asset('main/assets/images/favicon/icon-3.png')}}">
+	
     <style>
         #map-container {
             width: 100%;
@@ -32,6 +33,10 @@
         #current-location {
             font-size: 18px;
             margin-bottom: 10px;
+        }
+
+        #suggestion-list ul li {
+            color: red;
         }
     </style>
     <style>
