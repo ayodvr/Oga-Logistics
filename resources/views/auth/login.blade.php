@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Taxigo - Taxi Booking Mobile App</title>
+  <title>Ogaglobal Logistics</title>
   <link rel="icon" href="{{asset('main/assets/images/favicon/icon-3.png')}}">
   <link href="../../../../css2-6?family=League+Spartan:wght@100..900&display=swap" rel="stylesheet">
   <link href="../../../../css2-7?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
@@ -17,24 +17,7 @@
 <body>
   <div class="site-content">
     <!-- Preloader start -->
-    <div class="loader-mask">
-      <div class="loading-window">
-        <div class="car">
-          <div class="strike"></div>
-          <div class="strike strike2"></div>
-          <div class="strike strike3"></div>
-          <div class="strike strike4"></div>
-          <div class="strike strike5"></div>
-          <div class="car-detail spoiler"></div>
-          <div class="car-detail back"></div>
-          <div class="car-detail center"></div>
-          <div class="car-detail center1"></div>
-          <div class="car-detail front"></div>
-          <div class="car-detail wheel"></div>
-          <div class="car-detail wheel wheel2"></div>
-        </div>
-      </div>
-    </div>
+   
     <!-- Preloader end -->
     <!-- Sign in screen content start -->
     <div class="let-you-page-main">
@@ -105,7 +88,7 @@
       <footer id="let-you-footer">
         <div class="block-footer">
         
-          <p>Don’t have an account? <a href="sign-up.html-2.htm">Sign up</a></p>
+          <p>Don’t have an account? <a href="/register">Sign up</a></p>
         </div>
       </footer>
     </div>
