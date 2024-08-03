@@ -63,7 +63,7 @@
                         </div>
                             <div class="input-group mb-3">
                                 <input class="form-control" type="password" name="password" placeholder="Password" id="checkbox"  required >
-                                <span class="input-group-text" id="basic-addon1"><i class="fa fa-eye" style="font-size:18px;margin-top:1px;" onclick="myFunction()"></i></span>
+                                <span class="input-group-text" id="basic-addon1"><i class="fa fa-eye" style="font-size:18px;margin-top:1px;" onclick="myFunction()"> </i></span>
                                 
                             </div>
                             <div class="form-button">
