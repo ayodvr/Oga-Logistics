@@ -13,17 +13,18 @@
                 </div>
             </div>
         </div>
-        <div id="map-container"></div>
+        <div id="map-container">
+        </div>
         <div class="homescree-bottom-sec">
             <div class="homescree-bottom-sec-wrap going1-bottom">
                 @if(session('success'))
-                                        <div class="alert alert-info alert-dismissible fade show" style="width:100%; margin:auto" role="alert">
-                                        {{session('success')}}
-                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
-                                    </button>
-                                    </div>
-                                @endif
+                        <div class="alert alert-info alert-dismissible fade show" style="width:100%; margin:auto" role="alert">
+                        {{session('success')}}
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    </div>
+                @endif
                 <div class="tab-pane" id="car1" role="tabpanel"  tabindex="0">
                     <div class="select-car mt-24">
                         <div class="ride-more-content">
@@ -42,7 +43,8 @@
                         </div> 
                     </div>
                 </div>
-                <div class="going1-details" style="margin-bottom: -10px">
+                &nbsp;
+                <div class="going1-details">
                     <label class="pickup-lbl">Pickup</label>
                     <div class="pickup">
                         <input id="location-input" class="enter-txt" type="text" placeholder="Enter Pickup">
@@ -55,12 +57,12 @@
 </button>
 &nbsp;
     <div id="current-location" hidden></div>
-                <div class="going1-details">
-                    <label class="pickup-lbl">drop off</label>
-                    <div class="pickup">
-                        <input id="destination-input" class="enter-txt" type="text" placeholder="Enter Destination">
-                    </div>
-                </div>
+        <div class="going1-details">
+            <label class="pickup-lbl">drop off</label>
+            <div class="pickup">
+                <input id="destination-input" class="enter-txt" type="text" placeholder="Enter Destination">
+            </div>
+        </div>
  <form id="tripDetailsForm" method="POST" class="rounded-1" action="{{route('order.placed', hash('sha256', (string)auth()->user()->id))}}" style="background-color: #F0F0F0"> 
                 @csrf
         <input type="hidden" name="origin" id="hidden-origin" />
@@ -69,14 +71,14 @@
         <input type="hidden" name="trip_distance" id="hidden-trip-distance" />
         <input type="hidden" name="trip_cost" id="hidden-trip-cost" />
         <input type="hidden" value="{{auth()->user()->id}}" name="user_id">
-                <div class="going1-next-btn mt-32">
-                    <div class="d-grid gap-2 col-11 mx-auto">
-                      <button id="start-movement" class="btn btn-warning text-white" type="submit" disabled>Proceed</button>
-                    </div>
-                </div>
-                </form>
-            </div>
+    <div class="going1-next-btn mt-32">
+        <div class="d-grid gap-2 col-11 mx-auto">
+            <button id="start-movement" class="btn btn-warning text-white" type="submit" disabled>Proceed</button>
         </div>
-    </div>	
+    </div>
+    </form>
+    </div>
+</div>
+</div>	
 </section>
 @endsection
