@@ -100,4 +100,9 @@ class dashController extends Controller
         return view('mobilelayouts.account');
     }
 
+    public function profile()
+    {
+        return view('customer.profile');
+    }
+
 }

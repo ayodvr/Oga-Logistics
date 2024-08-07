@@ -415,7 +415,7 @@ p.taxigo-title {
 .going1-next-btn a{
     width: calc(100% - 32px);
     border-radius: 12px;
-    background: var(--4, #FFAA01);
+    background: var(--4, #fd6420);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1120,7 +1120,7 @@ label.custom-radio-sel-lang {
 }
 .accout-screen-edit {
     border-radius: 12px;
-    background: var(--4, #FFAA01);
+    background: var(--4, #fd6420);
     padding: 12px;
     width: fit-content;
 }
@@ -3323,7 +3323,7 @@ button.text-reset {
     background: #FB4945;
 }
 .order-screen2-tab-btn.active {
-    color: #FFAA01 !important;
+    color: #fd6420 !important;
 }
 .order-screen2-tab-btn:hover{
    color: #212B46;
@@ -3347,7 +3347,7 @@ button.text-reset {
 }
 .order-screen2-tab li.nav-item button:before {
     content: '';
-    background: #FFAA01;
+    background: #fd6420;
     height: 2px;
     width: 100%;
     position: absolute;
@@ -3370,7 +3370,7 @@ p.ride-time {
 .ride-active{
     margin-left: auto;
     border-radius: 4px;
-    background: var(--4, #FFAA01);
+    background: var(--4, #fd6420);
     padding: 3px 12px;
     height: fit-content;
 }
@@ -3402,7 +3402,7 @@ p.ride-time {
 .yellow{
     width: 20px;
     height: 20px;
-    background: #FFAA01;
+    background: #fd6420;
     border-radius: 10px;
 }
 .black{

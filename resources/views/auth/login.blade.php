@@ -28,7 +28,7 @@
            
           </header>
           <div class="taxi-img_main">
-            <img class="taxi-img_img" src="{{asset('main/assets/images/let-you-screen/logo-2.svg')}}" alt="logo">
+            <img class="taxi-img_img" src="{{asset('main/assets/images/let-you-screen/og-fav.png')}}" style="width: 83px; height: 80px" alt="logo">
           </div>
         </div>
         {{-- <button id="installButton">Install App</button> --}}
@@ -69,7 +69,7 @@
             
 
             <div class="sign-in-password-btn mt-32">
-            <button id="submit" type="{{ __('login') }}" class="ibtn" style="width: 100%;border-radius: 12px;background: #f78f33;display: flex;align-items: center;justify-content: center;padding: 15px 0;color: var(--1, #FFF);text-align: center;font-family: League Spartan, sans-serif;font-size: 20px;font-style: normal;font-weight: 500;line-height: 24px;margin: auto;max-width: 600px;"><b>Sign In</b></button> 
+            <button id="submit" type="{{ __('login') }}" class="ibtn" style="width: 100%;border-radius: 12px;background: #fd6420;display: flex;align-items: center;justify-content: center;padding: 15px 0;color: var(--1, #FFF);text-align: center;font-family: League Spartan, sans-serif;font-size: 20px;font-style: normal;font-weight: 500;line-height: 24px;margin: auto;max-width: 600px;"><b>Sign In</b></button> 
             
             </div>
             <div class="block-footer" style="text-align:center;margin-top: 20px;">
