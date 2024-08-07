@@ -1887,8 +1887,8 @@ span.ride-txt {
 .header-sec-wrap {
     display: flex;
     justify-content: space-between;
-    column-gap: 12px;
-    padding: 30px 16px;
+    column-gap: 10px;
+    padding: 5px 10px;
 }
 #homescreen{
     background-image: url(../images/map/map-img-4.png);
@@ -2006,7 +2006,6 @@ span.ride-txt {
 }
 .going1-screen .going1-next-btn,
 .going3-screen .going1-next-btn {
-    pointer-events: none;
     cursor: default;
 }
 .going1-feature.location-redirect {

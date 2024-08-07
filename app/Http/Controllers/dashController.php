@@ -59,7 +59,7 @@ class dashController extends Controller
             return view('partner.dash');
         }
         // return view('customer.dash');
-        return view('JointDashboard.dash');
+        return view('JointDashboard.homescreen');
     }
 
     public function trackorder($id)

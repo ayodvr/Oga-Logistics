@@ -6,7 +6,6 @@ use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\EstimateController;
 use App\Http\Controllers\adminController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
 
 
