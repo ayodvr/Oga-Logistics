@@ -1,34 +1,23 @@
 {
-    "name": "Ogaglobal Logistics",
-    "short_name": "OGL",
-    "start_url": "/index.php",
-    "background_color": "#f78f33",
-    "description": "",
-    "display": "fullscreen",
-    "theme_color": "#f78f33",
-    "description": "Your Reliable Logistics Company",
-    "start_url": "/index.php",
-    "display": "standalone",
-    "background_color": "#ffffff",
-    "theme_color": "#000000",
-    "icons": [
-        {
-            "src": "og-icon.PNG",
-            "sizes": "450x450",
-            "type": "image/png",
-            "purpose": "any maskable"
-        }
-      {
-        "src": "og-icon.png",
-        "sizes": "450x450",
-        "type": "image/png",
-        "purpose": "any maskable"
-      },
-      {
-        "src": "og-icon.png",
-        "sizes": "450x450",
-        "type": "image/png",
-        "purpose": "any maskable"
-      }
-    ]
-  }
+  "name": "Ogaglobal Logistics",
+  "short_name": "OGL",
+  "description": "Your Reliable Logistics Company",
+  "start_url": "/index.php",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#000000",
+  "icons": [
+    {
+      "src": "og-icon.png",
+      "sizes": "450x450",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "og-icon.png",
+      "sizes": "450x450",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

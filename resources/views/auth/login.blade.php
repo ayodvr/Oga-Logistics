@@ -13,6 +13,7 @@
   <link rel="stylesheet" href="{{asset('main/assets/css/intlTelInput-2.css')}}">
   <link rel="stylesheet" href="{{asset('main/assets/css/style-3.css')}}">
   <link rel="stylesheet" href="{{asset('main/assets/css/media-query-3.css')}}">
+  <link rel="manifest" href="{{ asset('/manifest.json') }}">
 </head>
 <body>
   <div class="site-content">
@@ -30,28 +31,29 @@
             <img class="taxi-img_img" src="{{asset('main/assets/images/let-you-screen/logo-2.svg')}}" alt="logo">
           </div>
         </div>
+        {{-- <button id="installButton">Install App</button> --}}
       </div>
       <div class="let-you-social-sec">
         <div class="lets_you_in_box">
           <h1 class="d-none">hidden</h1>
           <h2 class="lets_you_in_text">Sign In</h2>
           <br>
-                            @if(count($errors) > 0)
-                            @foreach($errors->all() as $error)
-                            <div class="alert alert-danger" style="width:100%; margin:auto">
-                                {{$error}}</div>
-                            @endforeach
-                            @endif
-                            @if(session('success'))
-                            <div class="alert alert-success" style="width:100%; margin:auto">
-                            {{session('success')}}</div>
-                            @endif
+          @if(count($errors) > 0)
+          @foreach($errors->all() as $error)
+          <div class="alert alert-danger" style="width:100%; margin:auto">
+              {{$error}}</div>
+          @endforeach
+          @endif
+          @if(session('success'))
+          <div class="alert alert-success" style="width:100%; margin:auto">
+          {{session('success')}}</div>
+          @endif
 
-                            @if(session('error'))
-                            <div class="alert alert-danger" style="width:100%; margin:auto">
-                            {{session('error')}}</div>
-                            @endif
-                            <br>
+          @if(session('error'))
+          <div class="alert alert-danger" style="width:100%; margin:auto">
+          {{session('error')}}</div>
+          @endif
+          <br>
           <form method="POST" action="{{ route('login') }}" >
             @csrf
             
@@ -110,5 +112,68 @@
   <script src="{{asset('main/assets/js/intlTelInput.min-2.js')}}"></script>
   <script src="{{asset('main/assets/js/flag-2.js')}}"></script>
   <script src="{{asset('main/assets/js/custom-3.js')}}"></script>
+  <script>
+    let deferredPrompt;
+    
+    // Listen for the beforeinstallprompt event
+    window.addEventListener('beforeinstallprompt', (e) => {
+        e.preventDefault(); // Prevent the default prompt
+        deferredPrompt = e; // Save the event for later
+        showInstallButton(); // Show the install button
+    });
+    
+    // Show the install button
+    function showInstallButton() {
+        const installButton = document.getElementById('installButton');
+        if (installButton) {
+            installButton.style.display = 'block';
+        }
+    }
+    
+    // Handle the install button click event
+    document.getElementById('installButton').addEventListener('click', (e) => {
+        const installButton = document.getElementById('installButton');
+        if (installButton && deferredPrompt) {
+            installButton.style.display = 'none'; // Hide the button
+            deferredPrompt.prompt(); // Show the installation prompt
+            deferredPrompt.userChoice.then((choiceResult) => {
+                if (choiceResult.outcome === 'accepted') {
+                    console.log('User accepted the install prompt');
+                } else {
+                    console.log('User dismissed the install prompt');
+                    installButton.style.display = 'block'; // Show the button again if the user dismissed
+                }
+                deferredPrompt = null; // Clear the prompt
+            });
+        }
+    });
+    
+    // Check if the app is already installed
+    window.addEventListener('appinstalled', (evt) => {
+        console.log('PWA was installed');
+        hideInstallButton(); // Hide the button if the app is installed
+    });
+    
+    // Register the service worker
+    if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('/service-worker.js')
+            .then(function(registration) {
+                console.log('Service Worker registered with scope:', registration.scope);
+            }).catch(function(error) {
+                console.log('Service Worker registration failed:', error);
+            });
+    }
+    
+    </script>
+    <script>
+        function myFunction() {
+            var x = document.getElementById("checkbox");
+            if (x.type === "password") {
+                x.type = "text";
+            } else {
+                x.type = "password";
+            }
+        }
+    </script>
 </body>
 </html>
