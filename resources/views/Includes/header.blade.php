@@ -146,10 +146,10 @@
                                             <h4 class="text-white mb-0">{{auth()->user()->name." ".auth()->user()->last_name}}</h4>
                                             <small class="text-white">{{auth()->user()->email}}</small>
                                         </div>
-                                       
+                                      
                                         <a href="/logout" class="text-white font-20 tooltip-wrapper" data-toggle="tooltip" 
                                         data-placement="top" title="" data-original-title="Logout" > <i class="zmdi zmdi-power"></i></a>
-                                    </form>
+                                    
                                     </div>
                                 </div>
                                 {{-- <div class="p-4">

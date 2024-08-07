@@ -70,7 +70,7 @@
                         <ul id="suggestion-list"></ul>  
                         <div class="w-100 map-input-container map-input-container-bottom mt-3" style="border: solid 2px; border-radius: 5px; border-color: #F0F0F0; font-weight: 400; margin-bottom: 10px;background-color:#F0F0F0">
                             
-                            <button type="submit" id="button1" class="btn btn-primary rounded-1" style="width: 100% !important;height: 68px;background-color:#f78f33;border-color: #F0F0F0 ;font-size: 23px;font-family: Roboto;font-weight: bold; " ><span style="text-align: center;"><b>Request A Ride</b></span></button>
+                            <button type="submit" id="button1" class="btn btn-primary rounded-1" style="width: 100% !important;height: 68px;background-color:#fd6420;border-color: #F0F0F0 ;font-size: 23px;font-family: Roboto;font-weight: bold; " ><span style="text-align: center;"><b>Request A Ride</b></span></button>
                             
                         
                         </div>
