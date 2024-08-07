@@ -3,8 +3,6 @@
 
 <section  class="going1-screen">
     <div class="homescreen-wrap">
-        <h1 class="d-none">Hidden</h1>
-        <h2 class="d-none">Cancel rides</h2>
         <div class="header-sec">
             <div class="header-sec-wrap">
                 <div class="header-setting">
@@ -15,9 +13,7 @@
                 
             </div>
         </div>
-        <div>
-            <div id="map-container"></div>
-        </div>
+        <div id="map-container"></div>
         <div class="homescree-bottom-sec">
             <div class="homescree-bottom-sec-wrap going1-bottom">
                 @if(session('success'))
@@ -46,8 +42,8 @@
                         </div> 
                     </div>
                 </div>
-                <div class="going1-details mt-16">
-                    {{-- <label class="pickup-lbl">Pickup</label> --}}
+                <div class="going1-details" style="margin-bottom: -10px">
+                    <label class="pickup-lbl">Pickup</label>
                     <div class="pickup">
                         <input id="location-input" class="enter-txt" type="text" placeholder="Enter Pickup">
                         <span id="clear-location" style="display: none;margin-right:10px">&#x2715;</span>
@@ -57,9 +53,10 @@
         style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">
   Use Current Location as Pickup
 </button>
+&nbsp;
     <div id="current-location" hidden></div>
-                <div class="going1-details mt-16">
-                    {{-- <label class="pickup-lbl">drop off</label> --}}
+                <div class="going1-details">
+                    <label class="pickup-lbl">drop off</label>
                     <div class="pickup">
                         <input id="destination-input" class="enter-txt" type="text" placeholder="Enter Destination">
                     </div>

@@ -15,7 +15,7 @@
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCsECTHYBJrZ7BL89WRvcVsWU0ry2AXfag&libraries=places"></script>
     <style>
         #map-container {
-            height: 500px;
+            height: 950px;
             width: 100%;
             border: 2px solid #ccc; /* Add a border around the map */
             box-sizing: border-box; /* Ensure padding and border are included in the element's total width and height */
