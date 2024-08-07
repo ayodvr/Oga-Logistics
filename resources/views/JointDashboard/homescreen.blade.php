@@ -8,11 +8,11 @@
         <div class="header-sec">
             <div class="header-sec-wrap">
                 <div class="header-setting">
-                    <a data-bs-toggle="offcanvas" href="#offcanvasExample" role="button"><img src="{{asset('main/assets/images/map/setting-icon-1.svg')}}" alt="setting-icon"></a>
+                    <a data-bs-toggle="offcanvas" href="#offcanvasExample" role="button">
+                    <img src="{{asset('mobstyle/icons/mu.svg')}}" alt="Menu Hamburger Icon" style="width: 40px; Height: 40px;">
+                    </a>
                 </div>
-                <div class="header-profile account-redirect">
-                    <img src="{{asset('main/assets/images/map/profile-1.png')}}" alt="profile-img">
-                </div>
+                
             </div>
         </div>
         <div>
@@ -74,7 +74,7 @@
         <input type="hidden" value="{{auth()->user()->id}}" name="user_id">
                 <div class="going1-next-btn mt-32">
                     <div class="d-grid gap-2 col-11 mx-auto">
-                      <button id="start-movement" class="btn btn-warning text-white" type="submit" disabled>Proceed</button>
+                      <button id="start-movement" class="btn btn-warning text-white" style="background-color:#fd6420" type="submit" disabled>Proceed</button>
                     </div>
                 </div>
                 </form>

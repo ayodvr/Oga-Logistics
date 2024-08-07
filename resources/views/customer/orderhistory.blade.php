@@ -50,9 +50,7 @@
                                                     </div>
                                                    
                                                 </div>
-                                                <div class="ride-active green">
-                                                    <p>New</p>
-                                                </div>
+                                               
                                             </div>
                                             <div class="boder mt-16"></div>
                                             <div class="ride-track mt-16">
@@ -101,6 +99,7 @@
                                             
                                         </div>
                                     </div>
+                                    <br>
                                     @endforeach
                                    
                                 </div>
