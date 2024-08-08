@@ -7,7 +7,7 @@
 <header id="top-header" style="background-color: #F0F0F0">
 			<div class="header-wrap">
 				<div class="header-back">
-					<a href="/account">
+					<a href="javascript:history.go(-1)">
 						<img src="{{asset('main/assets/svg/back-btn-white-4.svg')}}" alt="back-btn">
 					</a>
 				</div>

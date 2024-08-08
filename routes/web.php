@@ -29,6 +29,10 @@ Route::get('/dashboard', "App\Http\Controllers\dashcontroller@dashboard")->middl
 Route::get('/profile', "App\Http\Controllers\dashcontroller@profile")->middleware(['auth', 'verified'])->name('profile');
 Route::get('/history', "App\Http\Controllers\dashcontroller@history")->middleware(['auth', 'verified'])->name('history');
 Route::get('/address', "App\Http\Controllers\dashcontroller@address")->middleware(['auth', 'verified'])->name('address');
+Route::get('/about', "App\Http\Controllers\dashcontroller@about")->middleware(['auth', 'verified'])->name('about');
+Route::get('/contact', "App\Http\Controllers\dashcontroller@contact")->middleware(['auth', 'verified'])->name('contact');
+Route::get('/privacy', "App\Http\Controllers\dashcontroller@privacy")->middleware(['auth', 'verified'])->name('privacy');
+Route::get('/faq', "App\Http\Controllers\dashcontroller@faq")->middleware(['auth', 'verified'])->name('faq');
 
 Route::group(['middleware' => ['auth']], function() {
 Route::resource('/customer', 'App\Http\Controllers\CustomerController');
@@ -42,7 +46,6 @@ Route::put('/update_account/{id}', 'App\Http\Controllers\adminController@update_
 Route::post('/allocated/{order}/{id}', 'App\Http\Controllers\adminController@allocatedRide');
 Route::get('/trackorder/{id}', "App\Http\Controllers\dashcontroller@trackorder")->name('trackorder');
 Route::get('/orderhistory', "App\Http\Controllers\dashcontroller@orderhistory")->name('orderhistory');
-Route::get('/support', "App\Http\Controllers\dashcontroller@support")->name('support');
 Route::get('/account', "App\Http\Controllers\dashcontroller@account")->name('account');
 Route::get('/arrivalproblem', "App\Http\Controllers\dashcontroller@arrivalproblem")->name('arrivalproblem');
 Route::get('/payproblem', "App\Http\Controllers\dashcontroller@payproblem")->name('payproblem');

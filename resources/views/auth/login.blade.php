@@ -28,7 +28,7 @@
            
           </header>
           <div class="taxi-img_main">
-            <img class="taxi-img_img" src="{{asset('main/assets/images/let-you-screen/og-fav.png')}}" style="width: 83px; height: 80px" alt="logo">
+            <img class="taxi-img_img" src="{{asset('main/assets/images/let-you-screen/og-fav.png')}}" style="width: 83px; height: 80px" alt="Ogaglobal">
           </div>
         </div>
         {{-- <button id="installButton">Install App</button> --}}

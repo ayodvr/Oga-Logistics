@@ -408,6 +408,26 @@ p.taxigo-title {
   margin: auto;
   max-width: 600px;  
 }
+
+.cancel-btn a{
+    width: calc(100% - 32px);
+    border-radius: 12px;
+    background: var(--4, #fd6420);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px 0;
+    color: var(--1, #FFF);
+    text-align: center;
+    font-family: "League Spartan", sans-serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px;
+    margin: auto;
+}
+
+
 .verify-number-btn a,
 .update-change-btn a,
 .track-ride a,

@@ -74,7 +74,7 @@
 		 <div class="account-screen-top">
             	<div class="accout-screen-first">
 					<div class="accout-screen-img">
-						<img src="{{asset('main/assets/images/account/profile-img.png')}}" alt="profile-img">
+						<img src="{{asset('main/assets/images/account/user.png')}}" width="80px" height="80px" alt="profile-img">
 					</div>
 					<div class="accout-screen-content">
 						<h3>{{ Auth::user()->name }} {{ Auth::user()->last_name }}</h3>
@@ -118,7 +118,7 @@
                   </div>
                 </div>
               </a>
-              <a href="about-us.html-1.htm">
+              <a href="/about">
                 <div class="setting-deatils">
                   <div class="setting-icon">
                     <svg width="24" height="24" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -147,7 +147,7 @@
                   </div>
                 </div>
               </a>    
-              <a href="contact-us.html-1.htm">
+              <a href="/contact">
                 <div class="setting-deatils">
                   <div class="setting-icon">
                     <svg width="24" height="24" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -180,7 +180,7 @@
                   </div>
                 </div>
               </a>
-              <a href="privacy-policy.html-1.htm">
+              <a href="/privacy">
                 <div class="setting-deatils">
                   <div class="setting-icon">
                     <svg width="24" height="24" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -209,7 +209,7 @@
                   </div>
                 </div>
 					    </a>
-              <a href="faq.html-4.htm">
+              <a href="/faq">
                 <div class="setting-deatils">
                   <div class="setting-icon">
                     <svg width="24" height="24" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">

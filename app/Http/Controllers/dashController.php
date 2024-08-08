@@ -90,9 +90,9 @@ class dashController extends Controller
         return view('customer.driverproblem');
     }
 
-    public function support()
+    public function contact()
     {
-        return view('customer.support');
+        return view('customer.contact');
     }
 
     public function account()
@@ -103,6 +103,21 @@ class dashController extends Controller
     public function profile()
     {
         return view('customer.profile');
+    }
+
+    public function about()
+    {
+        return view('customer.about');
+    }
+
+    public function privacy()
+    {
+        return view('customer.privacy');
+    }
+
+    public function faq()
+    {
+        return view('customer.faq');
     }
 
 }
