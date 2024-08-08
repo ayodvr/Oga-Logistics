@@ -56,9 +56,9 @@
 					</div>
 					<div class="faq-bottom">
 						<div class='nested-accordion'>
-							<h3 class="faq-txt1 mt-24 ">What is Taxigo?</h3>
+							<h3 class="faq-txt1 mt-24 ">What types of parcels can I send?</h3>
 							<div class='comment mt-12'>
-								Arcu tortor pellentesque pharetra gravida viverra fermentum. Sit elementum gravida ut dis felis. Duis faucibus cursus tincidunt consectetur nec. Magna platea aliquam morbi bibendum sed nec.
+							We handle a variety of parcels including documents, packages, and oversized items. Please ensure that your parcel complies with our Prohibited Items policy.
 							</div>
 							<div class="boder mt-24"></div>
 						</div>
